@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timetable | Noshahi Group of College</title>
+  <link rel="stylesheet" href="timetable.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>/* ====== General Styling ====== */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #f3f6fb;
+      color: #222;
+    }
+    
+    /* ====== Hero Section ====== */
+    .hero {
+      background: url('img/college-bg.jpg') center/cover no-repeat;
+      height: 300px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .overlay {
+      background: rgba(11, 45, 107, 0.85);
+      color: white;
+      padding: 40px 60px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .overlay h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .overlay p {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    
+    /* ====== Tabs ====== */
+    .tab-section {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+    .tab-buttons {
+      display: inline-flex;
+      background: white;
+      border-radius: 50px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .tab {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #0b2d6b;
+      font-weight: 600;
+      padding: 12px 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .tab.active, .tab:hover {
+      background: #d22b2b;
+      color: white;
+    }
+    
+    /* ====== Table Section ====== */
+    .tables-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+    .table-box {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    .table-box.active {
+      display: block;
+    }
+    .table-box h2 {
+      text-align: center;
+      color: #0b2d6b;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    th {
+      background: #0b2d6b;
+      color: white;
+      padding: 12px;
+      text-transform: uppercase;
+    }
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    tr:hover td {
+      background: #f9f9f9;
+    }
+    
+    /* ====== Buttons ====== */
+    .actions {
+      text-align: center;
+      margin: 40px 0 60px;
+    }
+    .btn {
+      border: none;
+      padding: 12px 25px;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .print {
+      background: #0b2d6b;
+      color: white;
+    }
+    .download {
+      background: #d22b2b;
+      color: white;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+    
+    /* ====== Animations ====== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* ====== Responsive ====== */
+    @media (max-width: 768px) {
+      .overlay h1 { font-size: 28px; }
+      .tab { padding: 10px 20px; font-size: 14px; }
+      table { font-size: 14px; }
+    }
+    </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="overlay">
+      <h1>📚 Class Timetable</h1>
+      <p>Stay organized with your daily class schedules</p>
+    </div>
+  </header>
+
+  <!-- TAB BUTTONS -->
+  <section class="tab-section">
+    <div class="tab-buttons">
+      <button class="tab active" data-target="matric">Matric</button>
+      <button class="tab" data-target="intermediate">Intermediate</button>
+      <button class="tab" data-target="undergraduate">Undergraduate</button>
+    </div>
+  </section>
+
+  <!-- TIMETABLE SECTIONS -->
+  <section class="tables-container">
+
+    <!-- MATRIC -->
+    <div class="table-box active" id="matric">
+      <h2>Matric Timetable</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>8:00 - 9:00</th>
+              <th>9:00 - 10:00</th>
+              <th>10:00 - 11:00</th>
+              <th>11:30 - 12:30</th>
+              <th>12:30 - 1:30</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>English</td>
+              <td>Math</td>
+              <td>Physics</td>
+              <td>Computer</td>
+              <td>Islamiat</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>Biology</td>
+              <td>Math</td>
+              <td>Urdu</td>
+              <td>Pak Studies</td>
+              <td>Chemistry</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- INTERMEDIATE -->
+    <div class="table-box" id="intermediate">
+      <h2>Intermediate Timetable</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>8:00 - 9:00</th>
+              <th>9:00 - 10:00</th>
+              <th>10:00 - 11:00</th>
+              <th>11:30 - 12:30</th>
+              <th>12:30 - 1:30</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>Accounting</td>
+              <td>English</td>
+              <td>Economics</td>
+              <td>Math</td>
+              <td>Business Studies</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>Computer</td>
+              <td>Math</td>
+              <td>English</td>
+              <td>Statistics</td>
+              <td>Economics</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- UNDERGRADUATE -->
+    <div class="table-box" id="undergraduate">
+      <h2>Undergraduate Timetable</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>9:00 - 10:00</th>
+              <th>10:00 - 11:00</th>
+              <th>11:00 - 12:00</th>
+              <th>12:30 - 1:30</th>
+              <th>1:30 - 2:30</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monday</td>
+              <td>AI</td>
+              <td>Web Development</td>
+              <td>Database Systems</td>
+              <td>Operating Systems</td>
+              <td>English</td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td>Data Structures</td>
+              <td>Software Engineering</td>
+              <td>Islamic Studies</td>
+              <td>Mobile Computing</td>
+              <td>Research</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTION BUTTONS -->
+  <div class="actions">
+    <button class="btn print" onclick="window.print()">🖨️ Print Timetable</button>
+    <button class="btn download">📥 Download PDF</button>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const boxes = document.querySelectorAll('.table-box');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        boxes.forEach(b => b.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

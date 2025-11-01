@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noshahi Group of College - Navbar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ---------------- BASIC STYLES ---------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f7fa;
+    }
+
+    /* ---------------- NAVBAR ---------------- */
+    .navbar {
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px;
+    }
+
+    /* ---------------- LOGO + TEXT ---------------- */
+    .navbar-logo {
+      display: flex;
+      align-items: flex-start; /* text thora upar rahe */
+      gap: 10px;
+    }
+
+    .navbar-logo img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+    }
+
+    .college-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0b2d6b;
+      line-height: 1.1;
+    }
+
+    .college-tagline {
+      display: block;
+      font-size: 12px;
+      color: #d22b2b;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    /* ---------------- MENU ---------------- */
+    .navbar-menu {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    .navbar-menu li a {
+      text-decoration: none;
+      color: #0b2d6b;
+      font-weight: 600;
+      font-size: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-menu li a:hover {
+      color: #d22b2b;
+    }
+
+    /* ---------------- HAMBURGER (Mobile) ---------------- */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #0b2d6b;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-container {
+        flex-wrap: wrap;
+      }
+
+      .navbar-menu {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: #fff;
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+      }
+
+      .navbar-menu.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+
+      <!-- LOGO -->
+      <div class="navbar-logo">
+        <img src="img/Noshahi Group of College logo.svg" alt="Logo">
+        <div>
+          <span class="college-name">Noshahi Group of College</span>
+          <span class="college-tagline">Inspiring Minds, Building Futures</span>
+        </div>
+      </div>
+
+      <!-- MENU ICON -->
+      <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <!-- MENU -->
+      <ul class="navbar-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Academics</a></li>
+        <li><a href="#">Faculty</a></li>
+        <li><a href="#">Admissions</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <!-- DUMMY CONTENT -->
+  <section style="height:2000px; padding:30px;">
+    <h2>Scroll Down to See Sticky Navbar</h2>
+    <p>Content goes here...</p>
+  </section>
+
+  <!-- JS for Sticky Shadow + Mobile Menu -->
+  <script>
+    // Sticky shadow effect
+    window.addEventListener("scroll", function() {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 50) {
+        navbar.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
+      } else {
+        navbar.style.boxShadow = "0 3px 8px rgba(0,0,0,0.1)";
+      }
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById("mobile-menu");
+    const menu = document.querySelector(".navbar-menu");
+
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>

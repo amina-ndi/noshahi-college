@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Noshahi Group of Colleges</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ===== General Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      line-height: 1.7;
+    }
+
+
+    /* TOPBAR STYLING */
+    .topbar {
+      background: #0b2d6b; /* Dark Blue */
+      color: #fff;
+      font-size: 16px; /* Bigger font */
+      padding: 14px 0; /* Bigger height */
+    }
+
+    .topbar .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .topbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* Responsive for mobile */
+    }
+
+    .topbar-left a,
+    .topbar-right a {
+    
+      color: #fff;
+      margin-right: 25px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .topbar-left a i {
+      margin-right: 8px;
+      font-size: 18px; /* Bigger icons */
+      color: #36a2c9; /* Light Blue hover */
+
+    }
+
+    .topbar-left a:hover,
+    .topbar-right a:hover {
+      color: #36a2c9; /* Light Blue hover */
+
+    }
+    .topbar-link:hover{
+      color: #fff;
+
+    }
+
+    .topbar-right a {
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    /* Responsive (mobile view) */
+    @media (max-width: 768px) {
+      .topbar-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .topbar-left,
+      .topbar-right {
+        margin: 8px 0;
+      }
+      .topbar-right a {
+        margin-left: 12px;
+        margin-right: 12px;
+      }
+    }
+    
+    /* ---------------- NAVBAR ---------------- */
+    .navbar {
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      width: 100%;
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px;
+    }
+
+    /* ---------------- LOGO + TEXT ---------------- */
+    .navbar-logo {
+      display: flex;
+      align-items: flex-start; /* text thora upar rahe */
+      gap: 10px;
+    }
+
+    .navbar-logo img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+    }
+
+    .college-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0b2d6b;
+      line-height: 1.1;
+    }
+
+    .college-tagline {
+      display: block;
+      font-size: 12px;
+      color: #d22b2b;
+      margin-top: 2px;
+      font-weight: 500;
+    }    /* MENU */
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-menu li {
+      position: relative;
+    }
+    .navbar-menu > li {
+      margin-left: 30px;
+    }
+
+    .navbar-menu a {
+      text-decoration: none;
+      color:#0b2d6b;;
+      font-size: 17px;
+      font-weight: 550;
+      padding: 18px 0;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+
+    .navbar-menu a.active {
+  color: #fff;
+  background: #0b2d6b; /* blue-purple gradient */
+  border-radius: 5px;
+  padding: 8px 15px;
+  transition: 0.3s ease;
+  
+}
+
+.navbar-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+    /* HOVER EFFECT - MAIN MENU */
+    .navbar-menu > li > a {
+      position: relative;
+    }
+
+    .navbar-menu > li > a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 5px; 
+      bottom: 10px;
+      left: 0;
+      background-color:rgb(163, 40, 40);
+      transition: width 0.3s;
+    }
+
+    .navbar-menu > li > a:hover {
+      color: rgb(163, 40, 40);
+    }
+
+    .navbar-menu > li > a:hover::after {
+      width: 100%;
+    }
+
+    /* DROPDOWN */
+    .dropdown {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+     background: #f5f5f5;
+      min-width: 250px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      display: none;
+     
+    }
+     /* Dropdown list style remove */
+   .dropdown {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+    }
+  .dropdown li {
+  list-style: none;
+}
+
+    .dropdown li {
+      margin: 0;
+    }
+
+    .dropdown a {
+      padding: 12px 20px;
+      color: #333;
+      font-size: 15px;
+    }
+
+    .dropdown a:hover {
+      background: #f5f5f5;
+      color: rgb(163, 40, 40); /* केवल color change होगा, line नहीं आएगी */
+    }
+
+    .navbar-menu li:hover .dropdown {
+      display: block;
+    }
+
+
+
+
+    .navbar-menu a.active {
+  color: #fff;
+  background:#0b2d6b;; /* blue-purple gradient */
+  border-radius: 5px;
+  padding: 8px 15px;
+  transition: 0.3s ease;
+}
+
+.navbar-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+
+    /* Responsive (basic) */
+    @media (max-width: 992px) {
+      .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .navbar-menu {
+        flex-direction: column;
+        width: 100%;
+      }
+      .navbar-menu > li {
+        margin-left: 0;
+        width: 100%;
+      }
+      .navbar-menu a {
+        padding: 12px 0;
+        width: 100%;
+      }
+      .dropdown {
+        position: static;
+        box-shadow: none;
+        width: 100%;
+      }
+      .dropdown a {
+        padding-left: 30px;
+      }
+    }
+    /* Academics mega dropdown */
+.navbar-menu li.academics .mega-dropdown {
+  display: none;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+  padding: 20px 30px;
+   min-width: 600px; /* large width for mega menu */
+   
+   
+}
+
+.navbar-menu li.academics:hover .mega-dropdown {
+  display: grid;
+}
+
+.mega-dropdown li {
+  list-style: none;
+}
+
+.mega-dropdown h4 {
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #0b2d6b;; /* dark blue heading */
+}
+
+.mega-dropdown a {
+  display: block;
+  padding: 6px 0;
+  font-size: 15px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.mega-dropdown a:hover {
+ 
+  color: #0b2d6b;; /* hover पर सिर्फ़ text color बदलेगा */
+}
+
+
+
+
+/* Mega Dropdown Container */
+.navbar-menu li.academics .mega-dropdown {
+  display: none;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 20px;
+  padding: 15px 25px;
+  min-width: 100px;
+  background: #f5f5f5;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 999;
+}
+
+.navbar-menu li.academics:hover .mega-dropdown {
+  display: grid;
+}
+
+/* Each Column Section */
+.mega-section {
+  padding: 0 15px;
+  border-right: 1px solid #e0e0e0; /* Divider line */
+}
+
+.mega-section:last-child {
+  border-right: none; /* آخری والے پر لائن نہ ہو */
+}
+/* Main Wrapper */
+.ucl-page-title-wrap {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: left;
+}
+
+/* Transparent Header Substitute */
+.ucl-header-transparent-substitute {
+  height: 80px; /* adjust according to your header height */
+}
+
+/* Dark Overlay */
+.ucl-page-title-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient Bottom Effect */
+.ucl-page-title-bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+/* Container */
+.ucl-page-title-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Content */
+.ucl-page-title-content {
+  padding-top: 400px;
+  padding-bottom: 60px;
+}
+
+/* Caption Text */
+.ucl-page-caption {
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  margin-bottom: 10px;
+}
+
+/* Main Title */
+.ucl-page-title {
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0px;
+  color: #fff;
+}
+
+/* Layout */
+.entrance-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.entrance-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  gap: 40px;
+}
+
+/* Left Content */
+.entrance-content {
+  flex: 1 1 70%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.section-title {
+  font-size: 27px;
+  font-weight: 600;
+  color: #192f59;
+  margin-bottom: 15px;
+}
+
+.subheading {
+  font-size: 21px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.red {
+  color: #D22B2B;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: #D22B2B;
+  margin-bottom: 20px;
+}
+
+.requirement-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 15px 0 30px;
+}
+
+.requirement-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 17px;
+  color: #333;
+  text-align: justify;
+}
+
+.requirement-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #192f59;
+  font-size: 22px;
+}
+
+/* Sidebar */
+.entrance-sidebar {
+  flex: 1 1 28%;
+}
+
+.contact-box {
+  background: #192f59;
+  color: #fff;
+  padding: 35px;
+  border-radius: 10px;
+}
+
+.contact-box h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.contact-box .highlight {
+  color: #D22B2B;
+  font-size: 16px;
+}
+
+.contact-box p {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.contact-box .timing {
+  color: #D22B2B;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.social-links a {
+  color: #D22B2B;
+  font-size: 18px;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+.apply-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: linear-gradient(to right, #192f59, #D22B2B);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background: linear-gradient(to right, #D22B2B, #192f59);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .entrance-container {
+    flex-direction: column;
+  }
+  .entrance-content, .entrance-sidebar {
+    flex: 1 1 100%;
+  }
+}
+/* ===== History Section Styles ===== */
+.history-section {
+  background-color: #f9f9fb;
+  padding: 80px 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.history-section .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.history-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.title-column {
+  flex-basis: 25%;
+}
+
+.text-column {
+  flex-basis: 35%;
+}
+
+.section-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: black;
+  margin-bottom: 15px;
+}
+
+.divider {
+  width: 200px;
+  height: 3.5px;
+  background:rgb(170, 15, 15);
+  border-radius: 3px;
+  margin-bottom: 25px;
+}
+
+.history-section p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .history-section .container {
+    flex-direction: column;
+  }
+
+  .title-column,
+  .text-column {
+    flex-basis: 100%;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .divider {
+    margin: 0 auto 25px auto;
+  }
+}
+
+/* ======= Section Base ======= */
+.ucl-philosophy-section {
+  position: relative;
+  background: url('img/adventure-society.jpg') center/cover no-repeat, #192f59;
+  color: #fff;
+  padding: 100px 0;
+  overflow: hidden;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Blue Overlay for better readability */
+.ucl-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(25, 47, 89, 0.85);
+  z-index: 1;
+}
+
+/* Container */
+.ucl-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+/* ======= Card ======= */
+.ucl-card {
+  border-radius: 16px;
+  padding: 40px 30px;
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+
+
+/* ======= Icons ======= */
+.ucl-icon {
+  width: 60px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* ======= Titles ======= */
+.ucl-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  /* color: #c21919; */
+  color:crimson;
+  
+
+}
+
+/* ======= Text ======= */
+.ucl-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #f1f1f1;
+  text-align: justify;
+  font-weight: 800px;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 992px) {
+  .ucl-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ucl-card {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+.mission-vision-section {
+  width: 100%;
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.mv-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 500px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+/* Text Section */
+.mv-text {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mv-content {
+  max-width: 550px;
+}
+
+.mv-icon {
+  width: 70px;
+  margin-bottom: 20px;
+}
+
+.mv-text h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #002366;
+}
+
+.mv-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.mv-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mv-text ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+
+.mv-text ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #5a67d8;
+}
+
+/* Background Image Section */
+.mv-image {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  border-left: 1px solid #eee;
+}
+
+/* Backgrounds */
+.mv-bg1 {
+  background-image: url("img/history\ 1.jpg");
+}
+
+.mv-bg2 {
+  background-image: url("img/history2.jpg");
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .mv-row {
+    flex-direction: column;
+  }
+  .mv-text {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .mv-content {
+    max-width: 100%;
+  }
+  .mv-image {
+    width: 100%;
+    height: 300px;
+    border: none;
+  }
+}
+
+
+footer {
+  background-color: #111;
+  color: #eee;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.7;
+}
+
+/* Footer Container */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  padding: 80px 60px 50px;
+}
+
+/* Column Titles */
+.footer-column h3 {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Underline for titles */
+.footer-column h3::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: #ea2e2e; /* your blue-purple color */
+  margin-top: 8px;
+}
+
+/* Column text and links */
+.footer-column p {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.footer-column a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.footer-column a:hover {
+  color:white;
+}
+
+/* Logo */
+.footer-logo {
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+/* Lists */
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background: #0a0a0a;
+  border-top: 1px solid #222;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Social Icons */
+.social-icons a {
+  color:rgb(58, 170, 58);
+  font-size: 16px;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 60px 30px 40px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <section class="topbar">
+    <div class="container">
+      <div class="topbar-content">
+
+        <!-- LEFT SIDE -->
+        <div class="topbar-left">
+          <a href="mailto:noshahidevelopersinc@gmail.com">
+            <i class="fas fa-envelope"></i> noshahidevelopersinc@gmail.com
+          </a>
+          <a href="tel:03075071297">
+            <i class="fas fa-phone-alt"></i> 0307 5071297
+          </a>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="topbar-right">
+          <a href="calendar.html">Calendar</a>
+          <a href="student-portal.html">Students Portal</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+
+      <!-- LOGO -->
+      <div class="navbar-logo">
+        <img src="img/Noshahi Group of College logo.svg" alt="Logo">
+        <div>
+          <span class="college-name">Noshahi Group of Colleges</span>
+          <span class="college-tagline">Inspiring Minds, Building Futures</span>
+        </div>
+      </div>
+ <!-- MENU -->
+ <ul class="navbar-menu">
+  <li><a href="index.html">Home</a></li>
+  <li class="academics">
+  <a href="#">Academics</a>
+  <div class="mega-dropdown">
+    
+ 
+
+
+   
+    <div class="mega-section">
+      <a href="metric.html">Matric</a>
+      <a href="intermediate.html">Intermediate</a>
+      <a href="undergraduate.html">undergraduate</a>
+
+    </div>
+
+    
+
+  </div>
+</li>
+
+     <!-- Admissions Dropdown -->
+     <li>
+      <a href="#">Admissions</a>
+      <ul class="dropdown">
+        <li><a href="application-login.html">Apply Online</a></li>
+        <li><a href="Entrance-Requirements.html">Entrance Requirements</a></li>
+        <li><a href="fee-structure.html">Fee Structures</a></li>
+      </ul>
+    </li>
+
+    <!-- Faculty Dropdown -->
+    <li>
+      <a href="#">Faculty</a>
+      <ul class="dropdown">
+        <li><a href="matric-faculty.html">Matric</a></li>
+        <li><a href="inter-faculty.html">Intermediate</a></li>
+        <li><a href="undergraduate-faculty.html">undergraduate</a></li>
+      </ul>
+    </li>
+
+    <li><a href="life-at-NGC.html">Life at NGC</a></li>
+
+    <!-- About Us Dropdown -->
+    <li>
+      <a href="#">About Us</a>
+      <ul class="dropdown">
+        <li><a href="our-history.html">Our History</a></li>
+        <li><a href="massege-director.html">Message from the Director</a></li>
+      </ul>
+    </li>
+
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  </div>
+</nav>
+<script>
+  const currentLocation = window.location.href;
+  const menuItems = document.querySelectorAll('.navbar-menu a');
+
+  menuItems.forEach(link => {
+    if (link.href === currentLocation) {
+      link.classList.add('active');
+    }
+  });
+</script>
+
+<!-- Page Title Section -->
+<section class="ucl-page-title-wrap" style="background-image: url('img/history\ \ .jpg');">
+    <div class="ucl-page-title-overlay"></div>
+    <div class="ucl-page-title-bottom-gradient"></div>
+  
+    <div class="ucl-page-title-container">
+      <div class="ucl-page-title-content">
+        <div class="ucl-page-caption">Know us better</div>
+        <h1 class="ucl-page-title">About Us</h1>
+      </div>
+    </div>
+  </section>
+  <section class="history-section">
+    <div class="container">
+      <!-- Left Title Column -->
+      <div class="history-column title-column">
+        <h3 class="section-title">Our History</h3>
+        <div class="divider"></div>
+      </div>
+  
+      <!-- Middle Column -->
+      <div class="history-column text-column">
+        <p>
+          Noshahi Group Of Colleges (NGC) offers a creative and dynamic learning environment,
+          a diverse and dedicated faculty and a student body belonging to various parts of Pakistan.
+          NGC has a purpose-built campus with lecture halls, seminar rooms, libraries, computer labs,
+          student common rooms and cafeterias. The campus has ample ground area for outdoor sport
+          activities, including soccer, cricket, volleyball, and badminton.
+        </p>
+        <p>
+          Apart from providing rigorous academic training to its scholars, NGC also offers them an
+          elaborate system of club activities including debate, drama, music, poetry recitation,
+          chess, etc. A range of events and functions are organized by these clubs throughout the year.
+        </p>
+      </div>
+  
+      <!-- Right Column -->
+      <div class="history-column text-column">
+        <p>
+          Noshahi Group Of Colleges has been teaching for the International Programmes since 1994.
+          NGC is a Recognised Teaching Centre of the University of London — this is the highest level
+          of recognition and demonstrates a sustained commitment to developing excellence in
+          teaching, student support, and administrative processes.
+        </p>
+        <p>
+          For almost 30 years, NGC has been preparing students for successful careers in academics,
+          law practice, business, public service, teaching and more.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="ucl-philosophy-section">
+    <div class="ucl-overlay"></div>
+    <div class="ucl-container">
+      <!-- Philosophy -->
+      <div class="ucl-card">
+        <img src="img/Philosophy icon,jpg.png"  alt="Philosophy Icon" class="ucl-icon" />
+        <h3 class="ucl-card-title">Our Philosophy</h3>
+        <p>
+          Noshahi Group Of Colleges bridges local roots with global perspectives by offering
+          University of London programs. Through rigorous standards and diverse experiences,
+          students access world-class education while staying in Pakistan.
+        </p>
+      </div>
+  
+      <!-- Campus -->
+      <div class="ucl-card">
+        <img src="img/Art icon.jpg" alt="Campus Icon" class="ucl-icon" />
+        <h3 class="ucl-card-title">State of the Art Campus</h3>
+        <p>
+          Noshahi Group Of Colleges state-of-the-art campus provides students with an enriching
+          environment for a vibrant university life. With modern facilities, cutting-edge technology,
+          and spacious recreational areas, students can thrive academically and socially.
+        </p>
+      </div>
+  
+      <!-- Key to Success -->
+      <div class="ucl-card">
+        <img src="img/Key icon.jpg" alt="Key to Success Icon" class="ucl-icon" />
+        <h3 class="ucl-card-title">Key to Success</h3>
+        <p>
+          The key to providing quality education to Noshahi Group Of Colleges students lies in
+          fostering a dynamic learning environment, empowering dedicated educators, and leveraging
+          innovative teaching methods to help them excel.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="mission-vision-section">
+
+    <!-- Row 1 -->
+    <div class="mv-row">
+      <!-- Left Text -->
+      <div class="mv-text">
+        <div class="mv-content">
+          <img src="img/mission icon.jpg" alt="Mission Icon" class="mv-icon">
+          <h3> Mission Statement</h3>
+          <p>
+            Noshahi Developer Inc aims to deliver high-quality, innovative solutions and 
+            professional education that empower individuals and businesses to excel in 
+            the modern digital landscape.
+          </p>
+          <ul>
+            <li>Providing quality education and software solutions.</li>
+            <li>Encouraging innovation and personal growth.</li>
+            <li>Developing global competence within local culture.</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Right Background Image -->
+      <div class="mv-image mv-bg1"></div>
+    </div>
+  
+    <!-- Row 2 -->
+    <div class="mv-row">
+      <!-- Left Background Image -->
+      <div class="mv-image mv-bg2"></div>
+  
+      <!-- Right Text -->
+      <div class="mv-text">
+        <div class="mv-content">
+          <img src="img/vision icon.jpg" alt="Vision Icon" class="mv-icon">
+          <h3> Vision Statement</h3>
+          <p>
+            Our vision is to be a leading global organization, 
+            recognized for excellence in innovation, education, and technology — 
+            building a better digital future for all.
+          </p>
+          <ul>
+            <li>Inspire lifelong learning and leadership.</li>
+            <li>Promote creativity and technology.</li>
+            <li>Achieve excellence through innovation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mv-row">
+        <!-- Left Text -->
+        <div class="mv-text">
+          <div class="mv-content">
+            <img src="img/graduation icon.jpg" alt="Graduation Icon" class="mv-icon">
+            <h3>Graduation
+            </h3>
+            <p>
+                The graduation ceremony at Noshahi Group Of College is a prestigious and memorable event, celebrating the
+                 academic achievements of its students. Held annually, the ceremony brings together graduates, faculty, family,
+                  and friends in a formal setting. The event features inspiring speeches from distinguished guests and alumni, the 
+                  conferral of degrees, and the recognition of outstanding student accomplishments. It marks a significant milestone
+                   in the lives of graduates, symbolizing their hard work, dedication, and readiness to embark on their professional 
+                   journeys. The ceremony is not only a 
+                moment of pride for the students but also a testament to the college's commitment to academic excellence.
+            </p>
+
+          </div>
+        </div>
+    
+        <!-- Right Background Image -->
+        <div class="mv-image mv-bg1"></div>
+      </div>
+  </section>
+    
+
+ <!-- Footer Start -->
+ <footer class="footer">
+  <div class="footer-container">
+
+    <!-- Column 1: Contact Info -->
+    <div class="footer-column">
+      <img src="img/logo-footer.jpg" alt="NGC Logo" class="footer-logo">
+      <p>
+        Toba Tek Singh District, Punjab, Pakistan
+      </p>
+      <p>
+        +92 30751297<br>
+        <a href="mailto:info@ucl.edu.pk">info@ngc.edu.pk</a><br>
+        <a href="mailto:admissions@ucl.edu.pk">admissions@ngc.edu.pk</a>
+      </p>
+    </div>
+
+    <!-- Column 2: Our Campus -->
+    <div class="footer-column">
+      <h3>Our Campus</h3>
+      <ul>
+        <li><a href="massege-director.html">Director's Message</a></li>
+        <li><a href="our-campus.html#library">Libraries</a></li>
+        <li><a href="our-campus.html#sports">Sports Facilities</a></li>
+        <li><a href="computer-lab.html">Computer Labs</a></li>
+        <li><a href="science-lab.html">Science Labs</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Life at UCL -->
+    <div class="footer-column">
+      <h3>Life at NGC</h3>
+      <ul>
+        <li><a href="life-at-NGC.html#Welfare Society">NGC Welfare Society</a></li>
+        <li><a href="life-at-NGC.html#Sports Society">NGC Sports Society</a></li>
+        <li><a href="life-at-ucl.html#adventure">NGC Adventure Society</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Academics -->
+    <div class="footer-column">
+      <h3>Academics</h3>
+      <ul>
+        <li><a href="timetable.html">Timetables</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href="application-login.html" target="_blank">Apply for Admissions</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Copyright Area -->
+  <div class="footer-bottom">
+    <p>© 2024 Noshahi Group Of Colleges</p>
+
+    <div class="social-icons">
+      <a href="https://www.facebook.com/UCLLahore/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/company/university-college-lahore/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/ucl_universalcollegelahore" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+<!-- Footer End -->

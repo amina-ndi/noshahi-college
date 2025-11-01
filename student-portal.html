@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Noshahi Group of Colleges</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: 
+        url('img/unversalimg2.jpg') center/cover no-repeat;
+      background-attachment: fixed;
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+    }
+
+    .login-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 400px;
+      padding: 40px 30px;
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      color: #0b2d6b;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #0b2d6b;
+    }
+
+    label span {
+      color: #d22b2b;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #0b2d6b;
+      outline: none;
+      box-shadow: 0 0 6px rgba(11,45,107,0.2);
+    }
+
+    button {
+      width: 100%;
+      background: #0b2d6b;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #d22b2b;
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .links a {
+      font-size: 14px;
+      color: #0b2d6b;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .links a:hover {
+      color: #d22b2b;
+    }
+
+    .footer-text {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    @media (max-width: 480px) {
+      .login-card {
+        padding: 30px 20px;
+      }
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h2>Sign In</h2>
+      <form>
+        <div class="form-group">
+          <label for="studentId">Student ID <span>*</span></label>
+          <input type="text" id="studentId" placeholder="Enter your ID" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password <span>*</span></label>
+          <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit">Login</button>
+        <div class="links">
+          <a href="#">Forgot password?</a>
+          <a href="#">Create an account</a>
+        </div>
+      </form>
+      <p class="footer-text">© 2025 Noshahi Group of Colleges — All Rights Reserved</p>
+    </div>
+  </div>
+</body>
+</html>
