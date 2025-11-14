@@ -23,74 +23,85 @@
       line-height: 1.7;
     }
 
+/* SLIM TOPBAR STYLING */
+.topbar {
+  background: linear-gradient(90deg, #0b2d6b, #233b85);
+  color: #fff;
+  font-size: 14px; /* Slightly smaller text */
+  padding: 6px 0; /* 👈 Reduced height */
+}
 
-    /* TOPBAR STYLING */
-    .topbar {
-      background: #0b2d6b; /* Dark Blue */
-      color: #fff;
-      font-size: 16px; /* Bigger font */
-      padding: 14px 0; /* Bigger height */
-    }
+.topbar .container {
+  max-width: 1100px; /* Thoda compact width */
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
-    .topbar .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    .topbar-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap; /* Responsive for mobile */
-    }
+.topbar-left a,
+.topbar-right a {
+  color: #fff;
+  margin-right: 15px; /* Thoda kam gap */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
 
-    .topbar-left a,
-    .topbar-right a {
-    
-      color: #fff;
-      margin-right: 25px;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+.topbar-left a i {
+  margin-right: 6px;
+  font-size: 15px; /* Smaller icons */
+  color: #36a2c9;
+}
 
-    .topbar-left a i {
-      margin-right: 8px;
-      font-size: 18px; /* Bigger icons */
-      color: #36a2c9; /* Light Blue hover */
+.topbar-left a:hover,
+.topbar-right a:hover {
+  color: #36a2c9;
+}
 
-    }
+/* Right section links */
+.topbar-right a {
+  margin-left: 10px;
+  font-weight: 500;
+}
 
-    .topbar-left a:hover,
-    .topbar-right a:hover {
-      color: #36a2c9; /* Light Blue hover */
+/* 🔹 Responsive Design */
+@media (max-width: 992px) {
+  .topbar-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+  .topbar-left,
+  .topbar-right {
+    width: 100%;
+  }
+}
 
-    }
-    .topbar-link:hover{
-      color: #fff;
+@media (max-width: 600px) {
+  .topbar {
+    font-size: 13px;
+    padding: 5px 0;
+  }
 
-    }
+  .topbar-right {
+  display: flex;              /* 👈 items ek line mein aajayenge */
+  justify-content: center;    /* 👈 center align horizontally */
+  align-items: center;        /* 👈 vertically center */
+  gap: 15px;                  /* 👈 dono links ke beech space */
+  flex-wrap: nowrap;          /* 👈 line break hone se rokta hai */
+}
 
-    .topbar-right a {
-      margin-left: 25px;
-      font-weight: 500;
-    }
-
-    /* Responsive (mobile view) */
-    @media (max-width: 768px) {
-      .topbar-content {
-        flex-direction: column;
-        text-align: center;
-      }
-      .topbar-left,
-      .topbar-right {
-        margin: 8px 0;
-      }
-      .topbar-right a {
-        margin-left: 12px;
-        margin-right: 12px;
-      }
-    }
+  .topbar-left a i {
+    font-size: 14px;
+  }
+}
     
     /* ---------------- NAVBAR ---------------- */
     .navbar {
@@ -357,22 +368,27 @@
   border-right: none; /* آخری والے پر لائن نہ ہو */
 }
 
-
 /* HAMBURGER BUTTON */
 .hamburger {
-right: 20px; 
-position: absolute;
-display: none;
+  position: absolute;   /* free positioning inside navbar */
+  top: 18px;            /* 👈 upar se thoda space */
+  right: 20px;          /* 👈 right se gap */
+  display: none;
   font-size: 28px;
   color: #0b2d6b;
   cursor: pointer;
-  margin-left: auto;
+  z-index: 999;         /* ensure visible over other elements */
+  margin-left: 0;       /* remove auto margin */
 }
 
 /* SHOW HAMBURGER ON MOBILE */
 @media (max-width: 992px) {
-  .hamburger { display: block; }
-  .navbar-menu { display: none; }
+  .hamburger {
+    display: block;
+  }
+  .navbar-menu {
+    display: none;
+  }
 }
 
 /* MOBILE SLIDE MENU */
@@ -408,6 +424,25 @@ display: none;
   cursor: pointer;
   margin-bottom: 20px;
   color: #0b2d6b;
+}
+
+/* MOBILE NAVBAR LOGO SPACING */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+}
+
+@media (max-width: 992px) {
+  .navbar-container {
+    position: relative; /* important for absolute hamburger */
+    padding: 10px 0;
+  }
+
+  .navbar-logo {
+    margin-top: 5px; /* ensures space from top */
+  }
 }
 
 /* DROPDOWN (MOBILE) */
@@ -798,8 +833,8 @@ display: none;
 </head>
 
 <body>
- <!-- TOP BAR -->
- <section class="topbar">
+<!-- TOP BAR -->
+<section class="topbar">
   <div class="container">
     <div class="topbar-content">
 
@@ -1090,8 +1125,8 @@ menuItems.forEach(link => {
         <h3>Our Campus</h3>
         <ul>
           <li><a href="massege-director.html">Director's Message</a></li>
-          <li><a href="our-campus.html#library">Libraries</a></li>
-          <li><a href="our-campus.html#sports">Sports Facilities</a></li>
+          <li><a href="">Libraries</a></li>
+          <li><a href="">Sports Facilities</a></li>
           <li><a href="computer-lab.html">Computer Labs</a></li>
           <li><a href="science-lab.html">Science Labs</a></li>
         </ul>

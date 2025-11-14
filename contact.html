@@ -28,8 +28,8 @@
     .topbar {
       background: #0b2d6b; /* Dark Blue */
       color: #fff;
-      font-size: 16px; /* Bigger font */
-      padding: 14px 0; /* Bigger height */
+      font-size: 14px; /* Bigger font */
+      padding: 6px 0; /* Bigger height */
     }
 
     .topbar .container {
@@ -81,42 +81,39 @@
       font-weight: 500;
     }
 
-    /* Responsive (mobile view) */
-    @media (max-width: 768px) {
-      .topbar-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 6px;
-      }
-      .topbar-left,
-      .topbar-right {
-        margin: 8px 0;
-      }
-      .topbar-right a {
-        margin-left: 12px;
-        margin-right: 12px;
-      }
-    }
-
-
-
-
-/* ✅ MOBILE RESPONSIVE FIX */
-@media (max-width: 768px){
-  .topbar-content{
-    flex-direction: column;
-    text-align: center;
-    gap: 5px;
-  }
-
-  .topbar-left, .topbar-right{
-    justify-content: center;
-  }
-
-  .topbar-left a, .topbar-right a {
-    margin-right: 10px;
-  }
+/* Parent container ko flex aur center alignment */
+.topbar-content {
+  display: flex;
+  justify-content: center; /* horizontally center all children */
+  align-items: center;     /* vertical alignment */
+  flex-wrap: wrap;         /* mobile-friendly */
+  gap: 20px;               /* optional spacing between left/right */
 }
+
+/* Agar aap sirf contact number ko center chahte hain */
+.topbar-left {
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  flex: 1;                  /* space equally share kare */
+}
+
+/* Right section ke liye bhi equal spacing */
+.topbar-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/* Links ka styling */
+.topbar-left a,
+.topbar-right a {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 10px;  /* spacing between links */
+}
+
 
     
     /* ---------------- NAVBAR ---------------- */
@@ -386,16 +383,17 @@
 
 
 
-
 /* HAMBURGER BUTTON */
 .hamburger {
-right: 20px; 
-position: absolute;
- display: none;
+  position: absolute;   /* free positioning inside navbar */
+  top: 18px;            /* 👈 upar se thoda space */
+  right: 20px;          /* 👈 right se gap */
+  display: none;
   font-size: 28px;
   color: #0b2d6b;
   cursor: pointer;
-  margin-left: auto;
+  z-index: 999;         /* ensure visible over other elements */
+  margin-left: 0;       /* remove auto margin */
 }
 
 /* SHOW HAMBURGER ON MOBILE */
@@ -408,8 +406,8 @@ position: absolute;
 .mobile-menu {
   position: fixed;
   top: 0;
-  right: -380px;
-  width: 270px;
+  right: -280px;
+  width: 280px;
   height: 100%;
   background: #ffffff;
   box-shadow: -3px 0 10px rgba(0,0,0,0.3);
@@ -417,7 +415,6 @@ position: absolute;
   transition: right 0.4s ease;
   z-index: 2000;
 }
-
 .mobile-menu ul {
   list-style: none;
 }
@@ -1301,8 +1298,8 @@ footer {
       <h3>Our Campus</h3>
       <ul>
         <li><a href="massege-director.html">Director's Message</a></li>
-        <li><a href="our-campus.html#library">Libraries</a></li>
-        <li><a href="our-campus.html#sports">Sports Facilities</a></li>
+        <li><a href="">Libraries</a></li>
+        <li><a href="">Sports Facilities</a></li>
         <li><a href="computer-lab.html">Computer Labs</a></li>
         <li><a href="science-lab.html">Science Labs</a></li>
       </ul>
