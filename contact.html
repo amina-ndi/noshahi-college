@@ -23,97 +23,85 @@
       line-height: 1.7;
     }
 
-
-    /* TOPBAR STYLING */
-    .topbar {
-      background: #0b2d6b; /* Dark Blue */
-      color: #fff;
-      font-size: 14px; /* Bigger font */
-      padding: 6px 0; /* Bigger height */
-    }
-
-    .topbar .container {
-  
-  width: 100%;
-  max-width: 1200px;     /* or jo bhi value hai, rehne do */
-  margin: 0 auto;
-  padding: 0 15px;       /* ye overflow ko rokta hai */
-  box-sizing: border-box;
+/* SLIM TOPBAR STYLING */
+.topbar {
+  background: linear-gradient(90deg, #0b2d6b, #233b85);
+  color: #fff;
+  font-size: 14px; /* Slightly smaller text */
+  padding: 6px 0; /* 👈 Reduced height */
 }
 
-    
+.topbar .container {
+  max-width: 1100px; /* Thoda compact width */
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
-    .topbar-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap; /* Responsive for mobile */
-    }
-
-    .topbar-left a,
-    .topbar-right a {
-    
-      color: #fff;
-      margin-right: 25px;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .topbar-left a i {
-      margin-right: 8px;
-      font-size: 18px; /* Bigger icons */
-      color: #36a2c9; /* Light Blue hover */
-
-    }
-
-    .topbar-left a:hover,
-    .topbar-right a:hover {
-      color: #36a2c9; /* Light Blue hover */
-
-    }
-    .topbar-link:hover{
-      color: #fff;
-
-    }
-
-    .topbar-right a {
-      margin-left: 25px;
-      font-weight: 500;
-    }
-
-/* Parent container ko flex aur center alignment */
 .topbar-content {
   display: flex;
-  justify-content: center; /* horizontally center all children */
-  align-items: center;     /* vertical alignment */
-  flex-wrap: wrap;         /* mobile-friendly */
-  gap: 20px;               /* optional spacing between left/right */
-}
-
-/* Agar aap sirf contact number ko center chahte hain */
-.topbar-left {
-  display: flex;
-  justify-content: center;  /* horizontal center */
-  align-items: center;      /* vertical center */
-  flex: 1;                  /* space equally share kare */
-}
-
-/* Right section ke liye bhi equal spacing */
-.topbar-right {
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex: 1;
+  flex-wrap: wrap;
 }
 
-/* Links ka styling */
 .topbar-left a,
 .topbar-right a {
+  color: #fff;
+  margin-right: 15px; /* Thoda kam gap */
+  text-decoration: none;
+  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  margin: 0 10px;  /* spacing between links */
 }
 
+.topbar-left a i {
+  margin-right: 6px;
+  font-size: 15px; /* Smaller icons */
+  color: #36a2c9;
+}
+
+.topbar-left a:hover,
+.topbar-right a:hover {
+  color: #36a2c9;
+}
+
+/* Right section links */
+.topbar-right a {
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 992px) {
+  .topbar-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 4px;
+  }
+  .topbar-left,
+  .topbar-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    font-size: 13px;
+    padding: 5px 0;
+  }
+
+  .topbar-right {
+  display: flex;              /* 👈 items ek line mein aajayenge */
+  justify-content: center;    /* 👈 center align horizontally */
+  align-items: center;        /* 👈 vertically center */
+  gap: 15px;                  /* 👈 dono links ke beech space */
+  flex-wrap: nowrap;          /* 👈 line break hone se rokta hai */
+}
+
+  .topbar-left a i {
+    font-size: 14px;
+  }
+}
 
     
     /* ---------------- NAVBAR ---------------- */
@@ -1037,7 +1025,7 @@ footer {
 
       <!-- LOGO -->
       <div class="navbar-logo">
-        <img src="img/Noshahi Group of College logo.svg" alt="Logo">
+        <img src="img/college-logo.jpg" alt="Logo">
         <div>
           <span class="college-name">Noshahi Group of Colleges</span>
           <span class="college-tagline">Inspiring Minds, Building Futures</span>
