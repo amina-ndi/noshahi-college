@@ -22,17 +22,16 @@
       color: #333;
       line-height: 1.7;
     }
-
-/* SLIM TOPBAR STYLING */
+/* ===== Topbar ===== */
 .topbar {
-  background: linear-gradient(90deg, #0b2d6b, #233b85);
+  background: linear-gradient(90deg, #800000, #c04000); /* Maroon to Orange gradient */
   color: #fff;
-  font-size: 14px; /* Slightly smaller text */
-  padding: 6px 0; /* 👈 Reduced height */
+  font-size: 14px;
+  padding: 6px 0;
 }
 
 .topbar .container {
-  max-width: 1100px; /* Thoda compact width */
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -47,7 +46,7 @@
 .topbar-left a,
 .topbar-right a {
   color: #fff;
-  margin-right: 15px; /* Thoda kam gap */
+  margin-right: 15px;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-flex;
@@ -56,13 +55,13 @@
 
 .topbar-left a i {
   margin-right: 6px;
-  font-size: 15px; /* Smaller icons */
-  color: #36a2c9;
+  font-size: 15px;
+  color: #ffa500; /* orange icons */
 }
 
 .topbar-left a:hover,
 .topbar-right a:hover {
-  color: #36a2c9;
+  color: #ffa500; /* orange hover */
 }
 
 /* Right section links */
@@ -102,86 +101,107 @@
     font-size: 14px;
   }
 }
-    
-    /* ---------------- NAVBAR ---------------- */
-    .navbar {
-      background-color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      width: 100%;
-    }
-
-    .navbar-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 10px 20px;
-    }
-
-    /* ---------------- LOGO + TEXT ---------------- */
-    .navbar-logo {
-      display: flex;
-      align-items: flex-start; /* text thora upar rahe */
-      gap: 10px;
-    }
-
-    .navbar-logo img {
-      width: 55px;
-      height: 55px;
-      object-fit: contain;
-    }
-
-    .college-name {
-      font-size: 20px;
-      font-weight: 700;
-      color: #0b2d6b;
-      line-height: 1.1;
-    }
-
-    .college-tagline {
-      display: block;
-      font-size: 12px;
-      color: #d22b2b;
-      margin-top: 2px;
-      font-weight: 500;
-    }    /* MENU */
-    .navbar-menu {
-      list-style: none;
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar-menu li {
-      position: relative;
-    }
-    .navbar-menu > li {
-      margin-left: 30px;
-    }
-
-    .navbar-menu a {
-      text-decoration: none;
-      color:#0b2d6b;;
-      font-size: 17px;
-      font-weight: 550;
-      padding: 18px 0;
-      display: block;
-      transition: all 0.3s ease;
-    }
-
-
-    .navbar-menu a.active {
-  color: #fff;
-  background: #0b2d6b; /* blue-purple gradient */
-  border-radius: 5px;
-  padding: 8px 15px;
-  transition: 0.3s ease;
-  
+   /* ===== Navbar ===== */
+.navbar {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  width: 100%;
 }
 
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+/* Logo + text */
+.navbar-logo {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.navbar-logo img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.college-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #800000; /* maroon */
+  line-height: 1.1;
+}
+
+.college-tagline {
+  display: block;
+  font-size: 12px;
+  color: #c04000; /* orange tagline */
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* Navbar menu */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu > li {
+  margin-left: 30px;
+  position: relative;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #800000; /* maroon */
+  font-size: 17px;
+  font-weight: 550;
+  padding: 18px 0;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu a.active {
+  color: #fff;
+  background: linear-gradient(90deg, #800000, #c04000); /* maroon-orange active */
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+.navbar-menu a:hover {
+  background: rgba(255, 165, 0, 0.2); /* soft orange hover */
+  border-radius: 5px;
+}
+
+/* Hover effect underline */
+.navbar-menu > li > a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  bottom: 10px;
+  left: 0;
+  background-color: #c04000; /* orange underline */
+  transition: width 0.3s;
+}
+
+.navbar-menu > li > a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown */
+.dropdown a:hover {
+  color: #c04000;
+}
 .navbar-menu a:hover {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
@@ -255,7 +275,7 @@
 
     .navbar-menu a.active {
   color: #fff;
-  background:#0b2d6b;; /* blue-purple gradient */
+  background:#800000;; /* blue-purple gradient */
   border-radius: 5px;
   padding: 8px 15px;
   transition: 0.3s ease;
@@ -317,7 +337,7 @@
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 10px;
-  color: #0b2d6b;; /* dark blue heading */
+  color: #800000;; /* dark blue heading */
 }
 
 .mega-dropdown a {
@@ -331,7 +351,7 @@
 
 .mega-dropdown a:hover {
  
-  color: #0b2d6b;; /* hover पर सिर्फ़ text color बदलेगा */
+  color: #800000;; /* hover पर सिर्फ़ text color बदलेगा */
 }
 
 
@@ -375,7 +395,7 @@
   right: 20px;          /* 👈 right se gap */
   display: none;
   font-size: 28px;
-  color: #0b2d6b;
+  color: #800000;
   cursor: pointer;
   z-index: 999;         /* ensure visible over other elements */
   margin-left: 0;       /* remove auto margin */
@@ -412,7 +432,7 @@
 .mobile-menu a {
   display: block;
   padding: 12px 0;
-  color: #0b2d6b;
+  color: #800000;
   font-weight: 600;
   text-decoration: none;
   border-bottom: 1px solid #e3e3e3;
@@ -423,7 +443,7 @@
   text-align: right;
   cursor: pointer;
   margin-bottom: 20px;
-  color: #0b2d6b;
+  color: #800000;
 }
 
 /* MOBILE NAVBAR LOGO SPACING */
@@ -454,7 +474,7 @@
   font-size: 16px;
   font-weight: 600;
   text-align: left;
-  color: #0b2d6b;
+  color:#800000;
   border-bottom: 1px solid #e3e3e3;
   cursor: pointer;
 }
@@ -477,6 +497,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      
       text-align: center;
     }
 
@@ -495,11 +516,16 @@
     .hero-content h1 {
       font-size: 48px;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 10px; 
+       color: #ffa500; /* orange heading */
+
+
     }
 
     .hero-content p {
       font-size: 18px;
+        color: #fff;
+
     }
 
     /* ===== Container & Row ===== */
@@ -557,7 +583,7 @@
 
 .overview-section .col.right h2 {
   font-size: 28px;
-  color: #0b2d6b;
+  color:  #6b0b0b;
   margin-bottom: 20px;
   font-weight: 700;
 }
@@ -591,7 +617,8 @@
       font-size: 30px;
       margin-bottom: 25px;
       text-align: center;
-      color: #0b2d6b;;
+      color: #800000; /* maroon headings */
+
     }
     .subjects-section {
   padding: 60px 0;
@@ -608,7 +635,7 @@
 .subjects-section h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #192f59;
+  color:  #6b0b0b;
 }
 
 .subjects-grid {
@@ -619,7 +646,7 @@
 }
 
 .subject-card {
-  background: #0b2d6b;
+  background: #6b0b0b;
   color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -632,8 +659,9 @@
 }
 
 .subject-card:hover {
+
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 20px rgba(128,0,0,0.3);
 }
 
 
@@ -646,6 +674,7 @@
 
     .why-card {
       background: #f5f8ff;
+      
       padding: 30px;
       border-radius: 10px;
       text-align: center;
@@ -658,7 +687,7 @@
 
     .why-card i {
       font-size: 35px;
-      color: #0b2d6b;;
+      color: #800000;
       margin-bottom: 15px;
     }
 
@@ -672,7 +701,7 @@
       display: inline-block;
       margin-top: 20px;
       padding: 12px 30px;
-      background: rgb(158, 5, 5);
+      background: #c04000; /* orange */
       color: #fff;
       border-radius: 30px;
       text-decoration: none;
@@ -681,12 +710,12 @@
 
     .apply-btn:hover {
       opacity: 0.9;
-      background-color:#0b2d6b ;
+      background: #800000; /* maroon hover */
     }
 
     footer {
-  background-color: #111;
-  color: #eee;
+      background-color: #111;
+      color: #eee;
   font-family: "Poppins", sans-serif;
   line-height: 1.7;
   width: 100%;
@@ -715,7 +744,7 @@
   display: block;
   width: 80px;
   height: 3px;
-  background: #ea2e2e;
+  background: #c04000; /* orange line */
   margin-top: 8px;
 }
 
@@ -772,7 +801,7 @@
 
 /* ===== SOCIAL ICONS ===== */
 .social-icons a {
-  color: rgb(58, 170, 58);
+  color: #ffa500;
   font-size: 18px;
   margin-left: 20px;
   transition: 0.3s;
@@ -828,186 +857,211 @@
   }
 }
 
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 100px; /* aur upar */
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: #800000; /* maroon */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background-color: #c04000; /* orange accent */
+}
+
+
+
 
   </style>
 </head>
 
 <body>
-<!-- TOP BAR -->
-<section class="topbar">
-  <div class="container">
-    <div class="topbar-content">
 
-      <!-- LEFT SIDE -->
-      <div class="topbar-left">
-        <a href="mailto:visioncollegegojra@gmail.com">
-          <i class="fas fa-envelope"></i>visioncollegegojra@gmail.com
-        </a>
-        <a href="tel:03074800049">
-          <i class="fas fa-phone-alt"></i> 0307 4800049
-        </a>
-      </div>
-
-      <!-- RIGHT SIDE -->
-      <div class="topbar-right">
-        <a href="calendar.html">Calendar</a>
-        <a href="student-portal.html">Students Portal</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- NAVBAR -->
-<nav class="navbar">
-  <div class="navbar-container">
-
-    <!-- LOGO -->
-    <div class="navbar-logo">
-      <img src="img/vision_logo.png" alt="Logo">
-      <div>
-        <span class="college-name">Vision College</span>
-        <span class="college-tagline">Inspiring Minds, Building Futures</span>
+  <!-- TOP BAR -->
+  <section class="topbar">
+    <div class="container">
+      <div class="topbar-content">
+  
+        <!-- LEFT SIDE -->
+        <div class="topbar-left">
+          <a href="mailto:visioncollegegojra@gmail.com">
+            <i class="fas fa-envelope"></i> visioncollegegojra@gmail.com
+          </a>
+          <a href="tel:03074800049">
+            <i class="fas fa-phone-alt"></i> 0307 4800049
+          </a>
+        </div>
+  
+        <!-- RIGHT SIDE -->
+        <div class="topbar-right">
+          <div class="social-icons">
+            <a href="https://www.facebook.com/UCLLahore/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/university-college-lahore/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/ucl_universalcollegelahore" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>        </div>
+  
       </div>
     </div>
-    <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-<div class="close-btn" onclick="closeMenu()">
-  <i class="fas fa-times"></i>
-</div>
-
-<ul>
-  <li><a href="index.html">Home</a></li>
-
-  <li>
-    <button class="dropdown-btn  active">Academics ▼</button>
-    <ul class="dropdown-content">
-      <li><a href="metric.html" class="active">Matric</a></li>
-      <li><a href="intermediate.html">Intermediate</a></li>
-      <li><a href="undergraduate.html">Undergraduate</a></li>
-    </ul>
-  </li>
-
-  <li>
-    <button class="dropdown-btn">Admissions ▼</button>
-    <ul class="dropdown-content">
-      <li><a href="application-login.html">Apply Online</a></li>
-      <li><a href="Entrance-Requirements.html">Entrance Requirements</a></li>
-      <li><a href="fee-structure.html">Fee Structures</a></li>
-    </ul>
-  </li>
-
-  <li>
-    <button class="dropdown-btn">Faculty ▼</button>
-    <ul class="dropdown-content">
-      <li><a href="matric-faculty.html">Matric</a></li>
-      <li><a href="inter-faculty.html">Intermediate</a></li>
-      <li><a href="undergraduate-faculty.html">Undergraduate</a></li>
-    </ul>
-  </li>
-
-  <li><a href="life-at-VC.html">Life at VC</a></li>
-  <li>
-    <button class="dropdown-btn">About Us ▼</button>
-    <ul class="dropdown-content">
-      <li><a href="our-history.html">Our History</a></li>
-      <li><a href="massege-director.html"> Massegege from the Director</a></li>
-    </ul>
-  </li>    <li><a href="contact.html">Contact Us</a></li>
-</ul>
-</div>
-
-<!-- HAMBURGER BUTTON (MOBILE) -->
-<div class="hamburger" onclick="openMenu()">
-<i class="fas fa-bars"></i>
-</div>
-<script>
-function openMenu() {
-  document.getElementById("mobileMenu").style.right = "0";
-}
-
-function closeMenu() {
-  document.getElementById("mobileMenu").style.right = "-280px";
-}
-
-// Dropdown Toggle (Mobile)
-const dropdownButtons = document.querySelectorAll(".dropdown-btn");
-dropdownButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    const dropdown = btn.nextElementSibling;
-    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-  });
-});
-</script>
-<!-- MENU -->
-<ul class="navbar-menu">
-<li><a href="index.html">Home</a></li>
-<li class="academics">
-<a href="#">Academics</a>
-<div class="mega-dropdown">
+  </section>
   
-
-
-
- 
-  <div class="mega-section">
-    <a href="metric.html">Matric</a>
-    <a href="intermediate.html">Intermediate</a>
-    <a href="undergraduate.html">undergraduate</a>
-
-  </div>
-
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
   
-
-</div>
-</li>
-
-   <!-- Admissions Dropdown -->
-   <li>
-    <a href="#">Admissions</a>
-    <ul class="dropdown">
-      <li><a href="application-login.html">Apply Online</a></li>
-      <li><a href="Entrance-Requirements.html">Entrance Requirements</a></li>
-      <li><a href="fee-structure.html">Fee Structures</a></li>
-    </ul>
-  </li>
-
-  <!-- Faculty Dropdown -->
-  <li>
-    <a href="#">Faculty</a>
-    <ul class="dropdown">
-      <li><a href="matric-faculty.html">Matric</a></li>
-      <li><a href="inter-faculty.html">Intermediate</a></li>
-      <li><a href="undergraduate-faculty.html">undergraduate</a></li>
-    </ul>
-  </li>
-
-  <li><a href="life-at-VC.html">Life at VC</a></li>
-
-  <!-- About Us Dropdown -->
-  <li>
-    <a href="#">About Us</a>
-    <ul class="dropdown">
-      <li><a href="our-history.html">Our History</a></li>
-      <li><a href="massege-director.html">Message from the Director</a></li>
-    </ul>
-  </li>
-
-  <li><a href="contact.html">Contact Us</a></li>
-</ul>
-</div>
-</nav>
-<script>
-const currentLocation = window.location.href;
-const menuItems = document.querySelectorAll('.navbar-menu a');
-
-menuItems.forEach(link => {
-  if (link.href === currentLocation) {
-    link.classList.add('active');
-  }
-});
-</script>
-  <!-- ===== Hero Section ===== -->
+      <!-- LOGO -->
+      <div class="navbar-logo">
+        <img src="img/vision_logo.png" alt="Vision College Logo">
+        <div>
+          <span class="college-name">Vision College</span>
+          <span class="college-tagline">Inspiring Minds, Building Futures</span>
+        </div>
+      </div>
+  
+      <!-- MOBILE MENU -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" onclick="closeMenu()">
+          <i class="fas fa-times"></i>
+        </div>
+  
+        <ul>
+          <li><a href="index.html">Home</a></li>
+  
+          <li>
+            <button class="dropdown-btn active">Academics ▼</button>
+            <ul class="dropdown-content">
+              <li><a href="metric.html" class="active">Matric</a></li>
+              <li><a href="intermediate.html">Intermediate</a></li>
+              <li><a href="undergraduate.html">Undergraduate</a></li>
+            </ul>
+          </li>
+  
+          <li>
+            <button class="dropdown-btn">Admissions ▼</button>
+            <ul class="dropdown-content">
+              <li><a href="Entrance-Requirements.html">Entrance Requirements</a></li>
+              <li><a href="fee-structure.html">Fee Structure</a></li>
+            </ul>
+          </li>
+  
+          <li>
+            <button class="dropdown-btn">Faculty ▼</button>
+            <ul class="dropdown-content">
+              <li><a href="matric-faculty.html">Matric</a></li>
+              <li><a href="inter-faculty.html">Intermediate</a></li>
+              <li><a href="undergraduate-faculty.html">Undergraduate</a></li>
+            </ul>
+          </li>
+  
+          <li><a href="life-at-VC.html">Life at VC</a></li>
+  
+          <li>
+            <button class="dropdown-btn">About Us ▼</button>
+            <ul class="dropdown-content">
+              <li><a href="our-history.html">Our History</a></li>
+              <li><a href="massege-director.html">Message from the Director</a></li>
+            </ul>
+          </li>
+  
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+  
+      <!-- HAMBURGER BUTTON -->
+      <div class="hamburger" onclick="openMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+  
+      <script>
+        function openMenu() {
+          document.getElementById("mobileMenu").style.right = "0";
+        }
+        function closeMenu() {
+          document.getElementById("mobileMenu").style.right = "-280px";
+        }
+  
+        // Dropdown Toggle for Mobile
+        const dropdownButtons = document.querySelectorAll(".dropdown-btn");
+        dropdownButtons.forEach(btn => {
+          btn.addEventListener("click", () => {
+            const dropdown = btn.nextElementSibling;
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+          });
+        });
+      </script>
+  
+      <!-- DESKTOP MENU -->
+      <ul class="navbar-menu">
+        <li><a href="index.html">Home</a></li>
+  
+        <li class="academics">
+          <a href="#" class="active">Academics</a>
+          <div class="mega-dropdown">
+            <div class="mega-section">
+              <a href="metric.html">Matric</a>
+              <a href="intermediate.html">Intermediate</a>
+              <a href="undergraduate.html">Undergraduate</a>
+            </div>
+          </div>
+        </li>
+  
+        <li>
+          <a href="#">Admissions</a>
+          <ul class="dropdown">
+            <li><a href="Entrance-Requirements.html">Entrance Requirements</a></li>
+            <li><a href="fee-structure.html">Fee Structure</a></li>
+          </ul>
+        </li>
+  
+        <li>
+          <a href="#">Faculty</a>
+          <ul class="dropdown">
+            <li><a href="matric-faculty.html">Matric</a></li>
+            <li><a href="inter-faculty.html">Intermediate</a></li>
+            <li><a href="undergraduate-faculty.html">Undergraduate</a></li>
+          </ul>
+        </li>
+  
+        <li><a href="life-at-VC.html">Life at VC</a></li>
+  
+        <li>
+          <a href="#">About Us</a>
+          <ul class="dropdown">
+            <li><a href="our-history.html">Our History</a></li>
+            <li><a href="massege-director.html">Message from the Director</a></li>
+          </ul>
+        </li>
+  
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+  
+    </div>
+  </nav>
+  
+  <script>
+    const currentLocation = window.location.href;
+    const menuItems = document.querySelectorAll('.navbar-menu a');
+  
+    menuItems.forEach(link => {
+      if (link.href === currentLocation) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+  
+  <!-- ===== HERO SECTION ===== -->
   <section class="hero-section">
     <div class="overlay"></div>
     <div class="hero-content">
@@ -1015,158 +1069,181 @@ menuItems.forEach(link => {
       <p>Building a Strong Foundation for Academic Excellence</p>
     </div>
   </section>
-
-  <!-- ===== Overview Section ===== -->
+  
+  <!-- ===== OVERVIEW SECTION ===== -->
   <section class="overview-section">
     <div class="container">
       <div class="row">
         <div class="col left">
           <img src="img/metric.jpg" alt="Matric Overview">
         </div>
+  
         <div class="col right">
           <h2>About Matric Program</h2>
           <p>
-            At <strong>Vision College</strong>, our Matric Program is designed to provide students with
-            a solid foundation in science and arts subjects. Our mission is to develop critical thinking,
-            conceptual understanding, and confidence in our learners.
+            At <strong>Vision College</strong>, our Matric Program focuses on strong conceptual learning in both Science and Arts groups. 
+            Our aim is to prepare students for higher education with confidence, discipline, and academic excellence.
           </p>
+  
           <p>
-            The program is affiliated with the Board of Intermediate and Secondary Education, Lahore.
-            Students can choose between <strong>Science</strong> or <strong>Arts</strong> groups, each led by
-            experienced faculty and supported by modern learning facilities.
+            The program is affiliated with the Board of Intermediate and Secondary Education, Faisalabad. 
+            Students benefit from experienced faculty, modern labs, and a supportive learning environment.
           </p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ===== Subjects Section ===== -->
+  
+  <!-- ===== SUBJECTS SECTION ===== -->
   <section class="subjects-section">
     <div class="container">
       <h2>Subjects Offered</h2>
+  
       <div class="subjects-grid">
         <div class="subject-card">Physics</div>
         <div class="subject-card">Chemistry</div>
         <div class="subject-card">Biology</div>
         <div class="subject-card">Mathematics</div>
         <div class="subject-card">Computer Science</div>
-        
+  
         <div class="subject-card">English</div>
         <div class="subject-card">Urdu</div>
         <div class="subject-card">Islamiyat</div>
         <div class="subject-card">Pak Study</div>
         <div class="subject-card">Holy Quran</div>
-
-
       </div>
+  
     </div>
   </section>
-
-  <!-- ===== Why Choose Us Section ===== -->
+  
+  <!-- ===== WHY CHOOSE US ===== -->
   <section class="why-section">
     <div class="container">
-      <h2>Why Choose Vision College </h2>
+      <h2>Why Choose Vision College</h2>
+  
       <div class="why-grid">
         <div class="why-card">
           <i class="fa fa-user-tie"></i>
           <h4>Qualified Faculty</h4>
-          <p>Our experienced teachers are passionate about quality education and personal growth.</p>
+          <p>Highly experienced and dedicated teachers committed to academic excellence.</p>
         </div>
+  
         <div class="why-card">
           <i class="fa fa-flask"></i>
           <h4>Modern Science Labs</h4>
-          <p>Students learn practically in fully equipped physics, chemistry, and computer labs.</p>
+          <p>Fully equipped Physics, Chemistry, and Computer labs for practical learning.</p>
         </div>
+  
         <div class="why-card">
           <i class="fa fa-graduation-cap"></i>
           <h4>Board Affiliated</h4>
-          <p>Our curriculum strictly follows the Board of Intermediate and Secondary Education standards.</p>
+          <p>Curriculum strictly follows the Board of Intermediate and Secondary Education standards.</p>
         </div>
+  
         <div class="why-card">
           <i class="fa fa-hand-holding-heart"></i>
           <h4>Scholarships</h4>
-          <p>We offer merit-based and need-based scholarships to support deserving students.</p>
+          <p>Merit-based and need-based scholarships available for deserving students.</p>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ===== Admission Section ===== -->
+  
+  <!-- ===== ADMISSION SECTION ===== -->
   <section class="admission-section">
     <div class="container">
       <h2>Admission Details</h2>
-      <p>
-        Admissions for the Matric Program (Session 2025) are now open. Students can apply online or visit our campus
-        to submit their applications.
-      </p>
-      <p><strong>Required Documents:</strong> Matric Certificate, B-Form, Photos, and School Leaving Certificate.</p>
-      <a href="apply.html" class="apply-btn">Apply Now</a>
+      <p>Admissions for Matric (Session 2025) are now open. Students can apply online or visit our campus.</p>
+  
+      <p><strong>Required Documents:</strong> B-Form, Recent Photographs, Previous School Leaving Certificate.</p>
+  
+      <a href="contact.html" class="apply-btn">Apply Now</a>
     </div>
   </section>
-  <!-- Footer Start -->
-  <footer class="footer">
-    <div class="footer-container">
   
-      <!-- Column 1: Contact Info -->
-      <div class="footer-column">
-        <img src="img/vision_logo.png" alt="NGC Logo" class="footer-logo">
-        <p>
-       
-          Imamia Colony Near Islamia Ground Gojra
-        </p>
-        <p>
-          +92 3074800049<br>
-          <a href="mailto:info@ucl.edu.pk">info@ngc.edu.pk</a><br>
-          <a href="mailto:admissions@ucl.edu.pk">admissions@ngc.edu.pk</a>
-        </p>
-      </div>
-  
-      <!-- Column 2: Our Campus -->
-      <div class="footer-column">
-        <h3>Our Campus</h3>
-        <ul>
-          <li><a href="massege-director.html">Director's Message</a></li>
-          <li><a href="">Libraries</a></li>
-          <li><a href="">Sports Facilities</a></li>
-          <li><a href="computer-lab.html">Computer Labs</a></li>
-          <li><a href="science-lab.html">Science Labs</a></li>
-        </ul>
-      </div>
-  
-      <!-- Column 3: Life at UCL -->
-      <div class="footer-column">
-        <h3>Life at VC</h3>
-        <ul>
-          <li><a href="life-at-NGC.html#Welfare Society">VC Welfare Society</a></li>
-          <li><a href="life-at-NGC.html#Sports Society">VC Sports Society</a></li>
-          <li><a href="life-at-ucl.html#adventure">VC Adventure Society</a></li>
-        </ul>
-      </div>
-  
-      <!-- Column 4: Academics -->
-      <div class="footer-column">
-        <h3>Academics</h3>
-        <ul>
-          <li><a href="timetable.html">Timetables</a></li>
-          <li><a href="calendar.html">Calendar</a></li>
-          <li><a href="application-login.html" target="_blank">Apply for Admissions</a></li>
-        </ul>
-      </div>
-  
-    </div>
-  
-    <!-- Copyright Area -->
-    <div class="footer-bottom">
-      <p>© 2024 Vision College</p>
-  
-      <div class="social-icons">
-        <a href="https://www.facebook.com/UCLLahore/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/company/university-college-lahore/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/ucl_universalcollegelahore" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-  </footer>
-  <!-- Footer End -->
+ <!-- ===== FOOTER START ===== -->
+ <footer class="footer">
+  <div class="footer-container">
 
-</body>
+    <!-- Column 1 -->
+    <div class="footer-column">
+      <img src="img/vision_logo.png" alt="Vision College Logo" class="footer-logo">
+      <p>Imamia Colony, Near Islamia Ground, Gojra</p>
+      <p>
+        +92 3074800049<br>
+        <a href="mailto:info@visioncollegegojra.com">info@visioncollegegojra.com</a><br>
+        <a href="mailto:admissions@visioncollegegojra.com">admissions@visioncollegegojra.com</a>
+      </p>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-column">
+      <h3>Our Campus</h3>
+      <ul>
+        <li><a href="massege-director.html">Director's Message</a></li>
+        <li><a href="">Libraries</a></li>
+        <li><a href="">Sports Facilities</a></li>
+        <li><a href="computer-lab.html">Computer Labs</a></li>
+        <li><a href="science-lab.html">Science Labs</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-column">
+      <h3>Life at VC</h3>
+      <ul>
+        <li><a href="life-at-NGC.html#Welfare Society">VC Welfare Society</a></li>
+        <li><a href="life-at-NGC.html#Sports Society">VC Sports Society</a></li>
+        <li><a href="life-at-NGC.html#adventure">VC Adventure Society</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-column">
+      <h3>Academics</h3>
+      <ul>
+        <li><a href="timetable.html">Timetables</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+      </ul>
+    </div>
+
+  </div>
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top">
+  ↑
+</button>
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = "flex";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <p>© 2024 Vision College</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/visioncollegegojra" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/in/visioncollegegojra" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/visioncollegegojra" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    
+  </div>
+</footer>
+<!-- ===== FOOTER END ===== -->
+  
+  </body>
+  
 </html>

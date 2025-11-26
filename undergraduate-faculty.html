@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Vision College</title>
+  <title> Visison College</title>
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -22,17 +22,16 @@
       color: #333;
       line-height: 1.7;
     }
-
-/* SLIM TOPBAR STYLING */
+/* ===== Topbar ===== */
 .topbar {
-  background: linear-gradient(90deg, #0b2d6b, #233b85);
+  background: linear-gradient(90deg, #800000, #c04000); /* Maroon to Orange gradient */
   color: #fff;
-  font-size: 14px; /* Slightly smaller text */
-  padding: 6px 0; /* 👈 Reduced height */
+  font-size: 14px;
+  padding: 6px 0;
 }
 
 .topbar .container {
-  max-width: 1100px; /* Thoda compact width */
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -47,7 +46,7 @@
 .topbar-left a,
 .topbar-right a {
   color: #fff;
-  margin-right: 15px; /* Thoda kam gap */
+  margin-right: 15px;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-flex;
@@ -56,13 +55,13 @@
 
 .topbar-left a i {
   margin-right: 6px;
-  font-size: 15px; /* Smaller icons */
-  color: #36a2c9;
+  font-size: 15px;
+  color: #ffa500; /* orange icons */
 }
 
 .topbar-left a:hover,
 .topbar-right a:hover {
-  color: #36a2c9;
+  color: #ffa500; /* orange hover */
 }
 
 /* Right section links */
@@ -102,85 +101,107 @@
     font-size: 14px;
   }
 }
-    /* ---------------- NAVBAR ---------------- */
-    .navbar {
-      background-color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      width: 100%;
-    }
-
-    .navbar-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 10px 20px;
-    }
-
-    /* ---------------- LOGO + TEXT ---------------- */
-    .navbar-logo {
-      display: flex;
-      align-items: flex-start; /* text thora upar rahe */
-      gap: 10px;
-    }
-
-    .navbar-logo img {
-      width: 55px;
-      height: 55px;
-      object-fit: contain;
-    }
-
-    .college-name {
-      font-size: 20px;
-      font-weight: 700;
-      color: #0b2d6b;
-      line-height: 1.1;
-    }
-
-    .college-tagline {
-      display: block;
-      font-size: 12px;
-      color: #d22b2b;
-      margin-top: 2px;
-      font-weight: 500;
-    }    /* MENU */
-    .navbar-menu {
-      list-style: none;
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar-menu li {
-      position: relative;
-    }
-    .navbar-menu > li {
-      margin-left: 30px;
-    }
-
-    .navbar-menu a {
-      text-decoration: none;
-      color:#0b2d6b;;
-      font-size: 17px;
-      font-weight: 550;
-      padding: 18px 0;
-      display: block;
-      transition: all 0.3s ease;
-    }
-
-
-    .navbar-menu a.active {
-  color: #fff;
-  background: #0b2d6b; /* blue-purple gradient */
-  border-radius: 5px;
-  padding: 8px 15px;
-  transition: 0.3s ease;
-  
+   /* ===== Navbar ===== */
+.navbar {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  width: 100%;
 }
 
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+/* Logo + text */
+.navbar-logo {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.navbar-logo img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.college-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #800000; /* maroon */
+  line-height: 1.1;
+}
+
+.college-tagline {
+  display: block;
+  font-size: 12px;
+  color: #c04000; /* orange tagline */
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+/* Navbar menu */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu > li {
+  margin-left: 30px;
+  position: relative;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #800000; /* maroon */
+  font-size: 17px;
+  font-weight: 550;
+  padding: 18px 0;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu a.active {
+  color: #fff;
+  background: linear-gradient(90deg, #800000, #c04000); /* maroon-orange active */
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+.navbar-menu a:hover {
+  background: rgba(255, 165, 0, 0.2); /* soft orange hover */
+  border-radius: 5px;
+}
+
+/* Hover effect underline */
+.navbar-menu > li > a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 4px;
+  bottom: 10px;
+  left: 0;
+  background-color: #c04000; /* orange underline */
+  transition: width 0.3s;
+}
+
+.navbar-menu > li > a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown */
+.dropdown a:hover {
+  color: #c04000;
+}
 .navbar-menu a:hover {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
@@ -254,7 +275,7 @@
 
     .navbar-menu a.active {
   color: #fff;
-  background:#0b2d6b;; /* blue-purple gradient */
+  background:#800000;; /* blue-purple gradient */
   border-radius: 5px;
   padding: 8px 15px;
   transition: 0.3s ease;
@@ -316,7 +337,7 @@
   font-size: 16px;
   font-weight: 400;
   margin-bottom: 10px;
-  color: #0b2d6b;; /* dark blue heading */
+  color: #800000;; /* dark blue heading */
 }
 
 .mega-dropdown a {
@@ -330,7 +351,7 @@
 
 .mega-dropdown a:hover {
  
-  color: #0b2d6b;; /* hover पर सिर्फ़ text color बदलेगा */
+  color: #800000;; /* hover पर सिर्फ़ text color बदलेगा */
 }
 
 
@@ -374,7 +395,7 @@
   right: 20px;          /* 👈 right se gap */
   display: none;
   font-size: 28px;
-  color: #0b2d6b;
+  color: #800000;
   cursor: pointer;
   z-index: 999;         /* ensure visible over other elements */
   margin-left: 0;       /* remove auto margin */
@@ -411,7 +432,7 @@
 .mobile-menu a {
   display: block;
   padding: 12px 0;
-  color: #0b2d6b;
+  color: #800000;
   font-weight: 600;
   text-decoration: none;
   border-bottom: 1px solid #e3e3e3;
@@ -422,7 +443,7 @@
   text-align: right;
   cursor: pointer;
   margin-bottom: 20px;
-  color: #0b2d6b;
+  color: #800000;
 }
 
 /* MOBILE NAVBAR LOGO SPACING */
@@ -453,7 +474,7 @@
   font-size: 16px;
   font-weight: 600;
   text-align: left;
-  color: #0b2d6b;
+  color:#800000;
   border-bottom: 1px solid #e3e3e3;
   cursor: pointer;
 }
@@ -462,6 +483,7 @@
   display: none;
   padding-left: 15px;
 }
+
 .mobile-menu a.active,
 .mobile-menu .dropdown-btn.active {
   color: #d22b2b;        /* highlight color */
@@ -471,17 +493,11 @@
 
 /* HERO SECTION */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
-              url('img/history 1.jpg') center top no-repeat;
-  background-size: contain; /* ✅ Full image visible, no crop */
-  background-color: #0b2d6b; /* image ke neeche area same color */
-  color: #fff;
+  background: linear-gradient(rgba(128,0,0,0.7), rgba(192,64,0,0.7)),
+    url('https://images.unsplash.com/photo-1600880292089-90a7e086ee0c') center/cover no-repeat;
+  color: white;
   text-align: center;
-  padding: 100px 20px;
-  min-height: 60vh; /* ✅ Enough height for text */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 130px 20px;
 }
 
 /* Heading */
@@ -489,7 +505,7 @@
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #d22b2b;
+  color: #ffa500;
   line-height: 1.3;
 }
 
@@ -509,6 +525,7 @@
   }
   .hero h1 {
     font-size: 28px;
+    color: #800000;
   }
 
   .hero p {
@@ -545,7 +562,7 @@
     }
 
     .dept-intro {
-      color: #0b2d6b;
+      color: #404142;
       margin-bottom: 25px;
     }
 
@@ -575,12 +592,12 @@
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
-      border: 3px solid #0b2d6b;
+      border: 3px solid #c04000;
     }
 
     .faculty-card h3 {
       font-size: 18px;
-      color: #0b2d6b;
+      color: #800000;
       margin-bottom: 4px;
       
     }
@@ -592,7 +609,7 @@
 
     /* ============ RESEARCH SECTION ============ */
     .research {
-      background: #0b2d6b;
+      background: #800000;
       color: #fff;
       padding: 70px 20px;
       text-align: center;
@@ -653,7 +670,7 @@
     }
 
     .hod-card h3 {
-      color: #0b2d6b;
+      color:#800000;
       margin-bottom: 5px;
     }
 
@@ -664,7 +681,7 @@
 
     /* ============ JOIN FACULTY SECTION ============ */
     .join-section {
-      background: #d22b2b;
+      background: #800000;
       color: #fff;
       text-align: center;
       padding: 60px 20px;
@@ -682,7 +699,7 @@
 
     .join-btn {
       background: #fff;
-      color: #d22b2b;
+      color:#800000;
       padding: 12px 28px;
       border-radius: 30px;
       font-weight: 600;
@@ -690,12 +707,12 @@
     }
 
     .join-btn:hover {
-      background: #0b2d6b;
+      background: #c04000;
       color: #fff;
     }
     footer {
-  background-color: #111;
-  color: #eee;
+      background-color: #111;
+      color: #eee;
   font-family: "Poppins", sans-serif;
   line-height: 1.7;
   width: 100%;
@@ -724,7 +741,7 @@
   display: block;
   width: 80px;
   height: 3px;
-  background: #ea2e2e;
+  background: #c04000; /* orange line */
   margin-top: 8px;
 }
 
@@ -781,7 +798,7 @@
 
 /* ===== SOCIAL ICONS ===== */
 .social-icons a {
-  color: rgb(58, 170, 58);
+  color: #ffa500;
   font-size: 18px;
   margin-left: 20px;
   transition: 0.3s;
@@ -836,7 +853,30 @@
     margin: 0 12px;
   }
 }
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 100px; /* aur upar */
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  background-color: #800000; /* maroon */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+  z-index: 999;
+}
 
+.back-to-top:hover {
+  background-color: #c04000; /* orange accent */
+}
 
   </style>
 </head>
@@ -858,8 +898,12 @@
 
       <!-- RIGHT SIDE -->
       <div class="topbar-right">
-        <a href="calendar.html">Calendar</a>
-        <a href="student-portal.html">Students Portal</a>
+       
+      <div class="social-icons">
+        <a href="https://www.facebook.com/UCLLahore/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/university-college-lahore/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/ucl_universalcollegelahore" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
       </div>
 
     </div>
@@ -899,7 +943,6 @@
     <li>
       <button class="dropdown-btn">Admissions ▼</button>
       <ul class="dropdown-content">
-        <li><a href="application-login.html">Apply Online</a></li>
         <li><a href="Entrance-Requirements.html">Entrance Requirements</a></li>
         <li><a href="fee-structure.html">Fee Structures</a></li>
       </ul>
@@ -974,7 +1017,6 @@
      <li>
       <a href="#">Admissions</a>
       <ul class="dropdown">
-        <li><a href="application-login.html">Apply Online</a></li>
         <li><a href="Entrance-Requirements.html">Entrance Requirements</a></li>
         <li><a href="fee-structure.html">Fee Structures</a></li>
       </ul>
@@ -982,7 +1024,7 @@
 
     <!-- Faculty Dropdown -->
     <li>
-      <a href="#">Faculty</a>
+      <a href="#" class="active">Faculty</a>
       <ul class="dropdown">
         <li><a href="matric-faculty.html">Matric</a></li>
         <li><a href="inter-faculty.html">Intermediate</a></li>
@@ -1133,9 +1175,9 @@
         </p>
         <p>
           +92 3074800049<br>
-          <a href="mailto:info@ucl.edu.pk">info@ngc.edu.pk</a><br>
-          <a href="mailto:admissions@ucl.edu.pk">admissions@ngc.edu.pk</a>
-        </p>
+          <a href="mailto:info@visioncollegegojra.com">info@visioncollegegojra.com</a><br>
+        <a href="mailto:admissions@visioncollegegojra.com">admissions@visioncollegegojra.com</a>
+      </p>
       </div>
   
       <!-- Column 2: Our Campus -->
@@ -1166,12 +1208,32 @@
         <ul>
           <li><a href="timetable.html">Timetables</a></li>
           <li><a href="calendar.html">Calendar</a></li>
-          <li><a href="application-login.html" target="_blank">Apply for Admissions</a></li>
         </ul>
       </div>
   
     </div>
-  
+  <!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top">
+  ↑
+</button>
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = "flex";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  });
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
     <!-- Copyright Area -->
     <div class="footer-bottom">
       <p>© 2024 Vision College</p>
