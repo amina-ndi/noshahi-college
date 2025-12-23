@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Visison College</title>
+    <title> Vision College</title>
+  <link rel="shortcut icon" href="img/vision_logo.png" type="image/x-icon">
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -490,368 +491,171 @@
   font-weight: 600;      /* bold text */
 }
 
-/* === Page Title Section === */
-.ucl-page-title-wrap {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 70vh;
-  display: flex;
-  align-items: flex-end;
-  justify-content: left;
-  color: #fff;
-  overflow: hidden;
+/* Life at VC — Fully Responsive Styles (Maroon + Orange Theme) */
+
+* { box-sizing: border-box; margin:0; padding:0; font-family: "Poppins", sans-serif; }
+:root {
+  --maroon: #7a0f0f;
+  --orange: #ff7a00;
+  --bg: #fbf8f7;
+  --muted: #666;
+  --container: 1100px;
 }
 
-/* Dark overlay */
-.ucl-page-title-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 1;
+/* container */
+.container { width: calc(100% - 40px); max-width: var(--container); margin: 0 auto; }
+
+/* HEADER */
+.site-header { background: white; border-bottom: 1px solid #eee; position: sticky; top:0; z-index: 50; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; padding:12px 0; flex-wrap:wrap; }
+.logo { font-weight:700; color:var(--maroon); font-size:20px; }
+.nav { display:flex; flex-wrap:wrap; gap:10px; }
+.nav a { color:#333; text-decoration:none; padding:8px 10px; border-radius:8px; font-weight:500; }
+.nav a.active, .nav a:hover { background:var(--maroon); color:white; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(180deg, rgba(122,15,15,0.88), rgba(255,122,0,0.6)),
+  url('img/college-building.jpg') center/cover;
+  color:white;
+  padding:70px 0;
+}
+.hero-inner {
+  display:flex;
+  gap:30px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.hero-text { max-width:560px; }
+.hero-text h1 { font-size:38px; margin-bottom:10px; }
+.hero-text p { color:#f3eaea; margin-bottom:18px; line-height:1.6; }
+.hero-image img {
+  width:420px;
+  max-width:100%;
+  border-radius:12px;
+  border:5px solid rgba(255,255,255,0.12);
 }
 
-/* Gradient effect at bottom */
-.ucl-page-title-bottom-gradient {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 120px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-  z-index: 2;
+/* BUTTONS */
+.btn { display:inline-block; text-decoration:none; padding:10px 18px; border-radius:8px; font-weight:600; }
+.btn-primary { background:var(--orange); color:white; border: 2px solid var(--orange); }
+.btn-outline { background:transparent; color:var(--maroon); border: 2px solid var(--maroon); }
+
+/* HIGHLIGHTS */
+.highlights { padding:30px 0; }
+.grid-4 { display:grid; grid-template-columns: repeat(4,1fr); gap:16px; }
+.card.small {
+  background:white; padding:18px; border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.04); text-align:center;
+}
+.card.small h3 { color:var(--maroon); margin-bottom:6px; }
+
+/* GALLERY */
+.gallery { padding:30px 0; }
+.gallery h2 { color:var(--maroon); margin-bottom:6px; }
+.gallery .muted { color:var(--muted); margin-bottom:14px; }
+.gallery-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:12px; }
+.gallery-grid img {
+  width:95%; height:240px; object-fit:cover; border-radius:8px;
+  cursor:pointer; transition: transform .25s ease;
+}
+.gallery-grid img:hover { transform: translateY(-6px); }
+
+/* MODAL */
+.modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8);
+  align-items:center; justify-content:center; padding:20px; z-index:200;
+}
+.modal-img { max-width:40px; max-height:40vh; border-radius:8px; }
+.modal-close { position:absolute; top:10px; right:24px; font-size:32px; color:white; cursor:pointer; }
+.modal-caption { color:#fff; margin-top:10px; text-align:center; }
+
+/* TESTIMONIALS */
+.testimonials { padding:36px 0; }
+.test-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:18px; }
+.test-card {
+  background:white; padding:18px; border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.04);
+}
+.test-card .quote { font-style:italic; color:#333; margin-bottom:14px; }
+.test-card .meta { display:flex; gap:12px; align-items:center; }
+.test-card .meta img {
+  width:48px; height:48px; border-radius:50%; object-fit:cover;
+  border:2px solid var(--orange);
+}
+.test-card .meta strong { display:block; color:var(--maroon); }
+.test-card .meta span { display:block; color:var(--muted); font-size:13px; }
+
+/* FACILITIES */
+.facilities { padding:24px 0; }
+.grid-3 { display:grid; grid-template-columns: repeat(3,1fr); gap:16px; }
+.card { background:white; padding:20px; border-radius:10px; box-shadow:0 8px 18px rgba(0,0,0,0.04); }
+.card h3 { color:var(--maroon); margin-bottom:8px; }
+
+/* EVENTS STRIP */
+.events { padding:28px 0; }
+.events-strip {
+  display:flex; gap:12px; overflow-x:auto; padding-bottom:6px;
+  scroll-behavior: smooth;
+}
+.events-strip::-webkit-scrollbar { height:6px; }
+.events-strip::-webkit-scrollbar-thumb { background:var(--orange); border-radius:10px; }
+.event {
+  min-width:220px; background:white; padding:16px; border-radius:10px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.04);
+}
+.event h4 { color:var(--maroon); margin-bottom:6px; }
+
+/* CTA */
+.cta {
+  background: linear-gradient(90deg, rgba(122,15,15,0.95), rgba(255,122,0,0.95));
+  color:white;
+  padding:34px 0;
+  margin-top:20px;
+}
+.cta-inner {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; flex-wrap:wrap;
+}
+.cta-inner h2 { font-size:24px; margin-bottom:6px; }
+
+
+
+/* ================================
+   FULL RESPONSIVENESS
+================================ */
+
+/* Tablets + Small Laptops */
+@media (max-width: 1100px) {
+  .grid-4 { grid-template-columns: repeat(2,1fr); }
+  .test-grid { grid-template-columns: repeat(2,1fr); }
+  .grid-3 { grid-template-columns: repeat(2,1fr); }
+
+  .hero-inner { flex-direction:column-reverse; text-align:center; gap:18px; }
+  .hero-image img { max-width:80%; margin:0 auto; }
+
+  .cta-inner { flex-direction:column; text-align:center; }
 }
 
-/* Content container */
-.ucl-page-title-container {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px 60px 20px;
+/* Mobile (680px) */
+@media (max-width: 680px) {
+  .grid-4, .grid-3, .test-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2,1fr); }
+  .hero { padding:40px 0; }
+  .hero-text h1 { font-size:26px; }
+  .hero-text p { font-size:14px; }
+  .gallery-grid img { height:150px; }
+
+  .events-strip .event { min-width:180px; }
 }
 
-/* Text content */
-.ucl-page-title-content {
-  padding-top: 100px;
-}
-
-.ucl-page-caption {
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 0px;
-  margin-bottom: 10px;
-}
-
-.ucl-page-title {
-  font-size: 48px;
-  font-weight: 700;
-  letter-spacing: 0px;
-  color: #fff;
-  text-transform: none;
-}
-@media (max-width: 768px) {
-  .ucl-page-title-wrap {
-    height: 50vh;
-  }
-  .ucl-page-title {
-    font-size: 32px;
-  }
-  .ucl-page-caption {
-    font-size: 18px;
-  }
-}
-
-
-.ucl-life-wrapper {
-  padding: 80px 0;
-  background-color: #f8f9fb;
-}
-
-.ucl-life-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* LEFT SIDE */
-.ucl-life-content {
-  flex: 2;
-}
-
-.section-title {
-  font-size: 32px;
-  color: #800000;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-.ucl-society {
-  margin-bottom: 50px;
-}
-
-.ucl-society-title {
-  font-size: 22px;
-  color: #c71919;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.ucl-divider {
-  width: 200px;
-  height: 3px;
-  background-color: #c04000;
-  margin-bottom: 30px;
-}
-
-.ucl-society p {
-  font-size: 19px;
-  line-height: 1.7;
-  color: #444;
-  margin-bottom: 15px;
-}
-
-.ucl-society img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 8px;
-  margin-top: 15px;
-}
-
-/* RIGHT SIDE */
-.ucl-sidebar-contact {
-  flex: 1;
-  height: 100px;
-}
-
-.ucl-contact-box {
-  background-color: #800000;
-  color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-}
-
-.ucl-contact-box h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #fff;
-}
-
-.ucl-contact-box p {
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-.ucl-office-hours {
-  color: #ffa500;
-  font-weight: 600;
-}
-
-.ucl-social-icons {
-  margin: 15px 0;
-}
-
-.ucl-social-icons a {
-  color: #ffa500;
-  font-size: 18px;
-  margin-right: 12px;
-  transition: 0.3s;
-}
-
-.ucl-social-icons a:hover {
-  color: #fff;
-}
-
-.ucl-apply-btn {
-  display: inline-block;
-  background: linear-gradient(90deg, #c04000,#c04000);
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.ucl-apply-btn:hover {
-  background: linear-gradient(90deg, #c04000,#ffa500);
-}
-
-/* Responsive Design */
-@media (max-width: 992px) {
-  .ucl-life-container {
-    flex-direction: column;
-  }
-
-  .ucl-sidebar-contact {
-    width: 100%;
-  }
-
-  .ucl-contact-box {
-    margin-top: 40px;
-  }
-}
-
-
-.ucl-session-section {
-  background-color: #800000;
-  padding: 70px 0;
-  color: #fff;
-}
-
-.ucl-session-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-/* LEFT SIDE */
-.ucl-session-content {
-  flex: 1;
-  min-width: 300px;
-}
-
-.ucl-session-text {
-  font-size: 22px;
-  margin-bottom: 25px;
-  line-height: 1.6;
-  font-weight: 500;
-}
-
-.ucl-session-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.ucl-btn {
-  display: inline-flex;
-  align-items: center;
-  background: #c04000;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 700;
-  padding: 12px 25px;
-  border-radius: 3px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.ucl-btn i {
-  margin-left: 8px;
-  font-size: 14px;
-}
-
-.ucl-btn:hover {
-  background: #b02020;
-}
-
-/* RIGHT SIDE IMAGE */
-.ucl-session-image {
-  flex: 1;
-  min-width: 300px;
-  text-align: right;
-}
-
-.ucl-session-image img {
-  width: 100%;
-  max-width: 550px;
-  height: auto;
-  border-radius: 8px;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 992px) {
-  .ucl-session-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .ucl-session-image {
-    text-align: center;
-  }
-
-  .ucl-session-buttons {
-    justify-content: center;
-  }
-}
-
-
-/* Base Layout (Desktop) */
-.ucl-life-wrapper {
-  padding: 40px 0;
-}
-
-.ucl-life-container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-/* Text and Sidebar widths */
-.ucl-life-content {
-  width: 70%;
-}
-
-.ucl-sidebar-contact {
-  width: 30%;
-}
-
-/* Responsive Images */
-.ucl-society img {
-  width: 100%;
-  height: auto;
-  margin-top: 15px;
-  border-radius: 8px;
-}
-
-/* ✅ MOBILE RESPONSIVE FIX */
-@media (max-width: 768px) {
-
-  .ucl-life-container {
-    flex-direction: column;   /* side-by-side → vertical */
-    gap: 20px;
-  }
-
-  .ucl-life-content,
-  .ucl-sidebar-contact {
-    width: 100%;              /* full width on phone */
-  }
-
-  .ucl-life-content p {
-    font-size: 15px;           /* smaller readable text */
-    line-height: 1.6;
-  }
-
-  .ucl-sidebar-contact {
-    text-align: center;
-  }
-
-  .ngc-social-icons a {
-    font-size: 18px;
-  }
-}
-
-/* ✅ EXTRA SMALL SCREEN FIX */
-@media (max-width: 480px) {
-  .ucl-life-content p {
-    font-size: 14px;
-  }
-
-  h3.section-title, h4.ucl-society-title {
-    font-size: 20px;
-  }
+/* Extra Small Screens (420px) */
+@media (max-width: 420px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .hero-text h1 { font-size:22px; }
+  .hero-image img { width:100%; }
+  .modal-img { max-height:60vh; }
+  .events-strip .event { min-width:160px; padding:14px; }
 }
 
 
@@ -1189,91 +993,215 @@ footer {
     }
   });
 </script>
-  <section class="ucl-life-wrapper">
-    <div class="ucl-life-container">
-      <!-- Left Side: Text Section -->
-      <div class="ucl-life-content">
-        <h3 class="section-title">Life at VC</h3>
-  
-        <!-- Welfare Society -->
-        <div class="ucl-society">
-          <h4 class="ucl-society-title" id="welfare">VC Welfare Society</h4>
-          <div class="ucl-divider"></div>
-          <p>
-            Vision College’s Welfare Society provides students with opportunities to participate in social work and community service.
-             Here, students take part in charity programs, awareness sessions, and volunteer activities. Our aim is to help students
-              develop into responsible and socially active individuals.
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>Life at Vision College</h1>
+      <p>Discover a vibrant academic environment where discipline meets creativity, skills meet opportunities and students grow to their full potential.</p>
+    </div>
+    <div class="hero-image">
+      <img src="img/metric1.jpg" alt="Campus Students">
+    </div>
+  </div>
+</section>
 
+<!-- HIGHLIGHT STATS -->
+<section class="highlights">
+  <div class="container grid-4">
+    <div class="card small">
+      <h3>25+</h3>
+      <p>Active Societies</p>
+    </div>
+    <div class="card small">
+      <h3>50+</h3>
+      <p>Workshops / Year</p>
+    </div>
+    <div class="card small">
+      <h3>98%</h3>
+      <p>Student Satisfaction</p>
+    </div>
+    <div class="card small">
+      <h3>15+</h3>
+      <p>Sports Programs</p>
+    </div>
+  </div>
+</section>
 
-                    </p>
-          <p>            The Welfare Society collaborates with various social organizations to arrange charity drives, educational
-             workshops, and health camps. The environment at Vision College encourages students to embrace social responsibility 
-             and contribute towards helping others.
+<!-- CAMPUS GALLERY -->
+<section id="gallery" class="gallery">
+  <div class="container">
+    <h2>Campus Gallery</h2>
+    <p class="muted">A glimpse of everyday life at VC</p>
 
-                     </p>
-          <img src="img/welfare.jpg" alt="UCL Welfare Society">
-        </div>
-  
-        <!-- Sports Society -->
-        <div class="ucl-society">
-          <h4 class="ucl-society-title" id="sports">VC Sports Society</h4>
-          <div class="ucl-divider"></div>
-          <p>Vision College’s Sports Society provides students with a platform for healthy activities and competitive sports.
-            The college has proper ground facilities for cricket, football, volleyball, and badminton.
+    <div class="gallery-grid">
+      <img src="img/Campus.jpeg" alt="">
+      <img src="img/Campus1.jpeg" alt="">
+      <img src="img/Campus2.jpeg" alt="">
+      <img src="img/Campus3.jpeg" alt="">
+      <img src="img/Campus4.jpeg" alt="">
+      <img src="img/Campus5.jpeg" alt="">
+    </div>
+  </div>
+</section>
 
-          
-                    </p>
-            <P>
-              Annual sports events and matches give students opportunities to develop teamwork, leadership, and a competitive spirit.
-               Vision College aims to help students excel not only in academics but also in sports.
-              
-
-
-
-            </P>        
-          <img src="img/sports-society.jpg" alt="UCL Sports Society">
-        </div>
-      </div>
-  
-      
-      <!-- Right Side: Contact Info -->
-      <aside class="ucl-sidebar-contact">
-        <div class="ucl-contact-box">
-          <h3>Contact Info</h3>
-          <p>
-            Imamia Colony Near Islamia Ground Gojra</p>
-          <p>+92 3074800049<br>info@ngc.edu.pk</p>
-          <p class="ucl-office-hours">Mon – Fri 8:00 A.M. – 3:00 P.M.</p>
-  
-          <div class="ucl-divider"></div>
-  
-          <h3>Social Info</h3>
-          
-          <!-- SOCIAL MEDIA ICONS -->
-<div class="ngc-social-icons">
-  <a href="https://www.facebook.com/NoshahiGroupOfCollege" target="_blank" title="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="#" target="_blank" title="LinkedIn">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
-  <a href="#" target="_blank" title="Twitter">
-    <i class="fab fa-twitter"></i>
-  </a>
-  <a href="#" target="_blank" title="Instagram">
-    <i class="fab fa-instagram"></i>
-  </a>
+<!-- GALLERY MODAL -->
+<div class="modal" id="modal">
+  <span class="modal-close" onclick="closeModal()">&times;</span>
+  <img id="modalImg" class="modal-img">
 </div>
 
-  
-          <a class="ucl-apply-btn" href="contact.html" target="_blank">
-            Apply Online
-          </a>
-        </div>
-      </aside>
+<!-- FACILITIES -->
+<section class="facilities">
+  <div class="container">
+    <h2 style="color:var(--maroon); margin-bottom:15px;">Facilities We Offer</h2>
+
+    <div class="grid-3">
+      <div class="card">
+        <h3>Modern Classrooms</h3>
+        <p>Fully equipped learning spaces with digital support & comfortable seating.</p>
+      </div>
+
+      <div class="card">
+        <h3>Library & Study Zones</h3>
+        <p>A peaceful, resource-rich environment to help students focus & grow.</p>
+      </div>
+
+      <div class="card">
+        <h3>Sports & Fitness</h3>
+        <p>Cricket, football, badminton, athletics and indoor games.</p>
+      </div>
     </div>
-  </section>
-  
+  </div>
+</section>
+
+<!-- STUDENT LIFE -->
+<section class="student-life">
+  <div class="container">
+    <h2 style="color:var(--maroon); margin-bottom:12px;">Student Life at VC</h2>
+    <p class="muted">Where learning meets creativity, friendships & unforgettable experiences.</p>
+
+    <div class="grid-3">
+      <div class="life-box">
+        <h3>Competitions & Events</h3>
+        <p>Debates, Naat/Qiraat, Science exhibitions, IT competitions.</p>
+      </div>
+
+      <div class="life-box">
+        <h3>Study Tours</h3>
+        <p>Educational trips to historical, scientific & industrial locations.</p>
+      </div>
+
+      <div class="life-box">
+        <h3>Professional Grooming</h3>
+        <p>Career counseling, skill-building workshops and personality development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events">
+  <div class="container">
+    <h2 style="color:var(--maroon);">Events & Activities</h2>
+
+    <div class="events-strip">
+      <div class="event">
+        <h4>Sports Week</h4>
+        <p>Full week of sports championships & competitions.</p>
+      </div>
+      <div class="event">
+        <h4>Annual Function</h4>
+        <p>A celebration of achievements, talents and awards.</p>
+      </div>
+      <div class="event">
+        <h4>Welcome Party</h4>
+        <p>New students are warmly welcomed to VC family.</p>
+      </div>
+      <div class="event">
+        <h4>Qiraat / Naat Competitions</h4>
+        <p>Showcasing religious talent and spiritual recitations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <h2 style="color:var(--maroon);">What Students Say</h2>
+
+    <div class="test-grid">
+      <div class="test-card">
+        <p class="quote">“VC is a place that truly helps you grow academically and personally.”</p>
+        <div class="meta">
+          <img src="img/student1.jpg">
+          <div>
+            <strong>Ahmed Khan</strong>
+            <span>Pre-Engineering</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <p class="quote">“Teachers are very kind and supportive. I love the environment.”</p>
+        <div class="meta">
+          <img src="img/student2.jpg">
+          <div>
+            <strong>Sana Fatima</strong>
+            <span>ICS Student</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <p class="quote">“Events, tours and activities make the college life amazing!”</p>
+        <div class="meta">
+          <img src="img/student1.jpg">
+          <div>
+            <strong>Areeb Malik</strong>
+            <span>FSC Student</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container cta-inner">
+    <h2>Join Vision College — Where Your Future Begins</h2>
+    <a href="contact.html" class="btn btn-outline">Apply Now</a>
+  </div>
+</section>
+ <!-- SMALL JS FOR GALLERY MODAL -->
+ <script>
+  function openModal(src, alt) {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const caption = document.getElementById('modal-caption');
+    modal.style.display = 'flex';
+    modalImg.src = src;
+    modalImg.alt = alt;
+    caption.textContent = alt || '';
+  }
+
+  function closeModal(e) {
+    // close only when background or close icon clicked
+    if (e && e.target && (e.target.id === 'modal' || e.target.classList.contains('modal-close'))) {
+      document.getElementById('modal').style.display = 'none';
+    } else if (!e) {
+      document.getElementById('modal').style.display = 'none';
+    }
+  }
+
+  // close by ESC key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
  
   
 

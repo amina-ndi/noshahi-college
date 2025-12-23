@@ -25,7 +25,7 @@ body {
   padding: 20px;
 }
 .overlay {
-  background: rgba(11, 45, 107, 0.85);
+  background:maroon;
   padding: 35px 50px;
   border-radius: 12px;
   text-align: center;
@@ -58,15 +58,18 @@ body {
   background: transparent;
   border: none;
   padding: 12px 28px;
-  color: #0b2d6b;
+  color: maroon;
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s;
 }
 
-.tab.active,
+.tab.active{
+  background-color: #ffa500;
+  color: white;
+}
 .tab:hover {
-  background: #d22b2b;
+  background: #c04000;
   color: white;
 }
 
@@ -86,7 +89,7 @@ body {
 }
 .table-box h2 {
   text-align: center;
-  color: #0b2d6b;
+  color: maroon;
   font-size: 24px;
   margin-bottom: 15px;
 }
@@ -101,7 +104,7 @@ body {
   height: 6px;
 }
 .table-wrapper::-webkit-scrollbar-thumb {
-  background: #0b2d6b;
+  background: maroon;
   border-radius: 10px;
 }
 
@@ -117,7 +120,7 @@ table {
 }
 
 th {
-  background: #0b2d6b;
+  background: maroon;
   color: white;
   padding: 12px;
   text-transform: uppercase;
@@ -146,8 +149,8 @@ tr:hover td {
   margin: 5px;
   transition: 0.3s;
 }
-.print { background: #0b2d6b; color: white; }
-.download { background: #d22b2b; color: white; }
+.print { background:#ffa500; color: white; }
+.download { background: maroon; color: white; }
 .btn:hover { transform: translateY(-2px); }
 
 /* ====== Animations ====== */
